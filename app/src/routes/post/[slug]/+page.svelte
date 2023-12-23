@@ -4,7 +4,7 @@
 	import { urlFor } from '$lib/utils/image';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	let { data } = $props();
 </script>
 
 <section class="post">
@@ -24,7 +24,7 @@
 			{formatDate(data._createdAt)}
 		</p>
 		<div class="post__content">
-			<PortableText value={data.body} />
+			<PortableText value={data.body} components={{}} />
 		</div>
 	</div>
 </section>

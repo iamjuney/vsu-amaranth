@@ -3,7 +3,7 @@
 	import { urlFor } from '$lib/utils/image';
 	import type { Post } from '$lib/utils/sanity';
 
-	export let post: Post;
+	let { post } = $props<{ post: Post }>();
 </script>
 
 <div class="card">
