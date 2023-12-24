@@ -5,6 +5,40 @@
 	let { posts } = $props<{ posts: Post[] }>();
 </script>
 
+{#snippet story({ post, index })}
+	<div class={index < 2 ? 'border-b border-foreground' : ''}>
+		{#if index === 0}
+			<div class="block w-full">
+				<a href="/" class="relative block aspect-video w-full"
+					><img
+						src={post.mainImage && urlFor(post.mainImage).url()}
+						alt=""
+						class="h-full w-full object-cover"
+					/></a
+				>
+			</div>
+		{/if}
+
+		<div class="py-4">
+			<div class="block space-y-2">
+				<h2>
+					<a
+						href="/"
+						class="text-lg font-black leading-tight text-foreground hover:text-accent-foreground"
+						>{post.title}</a
+					>
+				</h2>
+				<p class="line-clamp-4 text-xs">
+					{post.excerpt}
+				</p>
+				<h4 class="text-xs italic">
+					By <a href="/" class="text-primary hover:text-foreground">{post.author?.name}</a>
+				</h4>
+			</div>
+		</div>
+	</div>
+{/snippet}
+
 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 	<div class="relative hidden md:flex md:flex-col">
 		<div class="absolute top-8 block w-full" aria-hidden="true">
@@ -17,37 +51,7 @@
 		<div class="relative flex flex-wrap bg-white px-4">
 			<div class="w-[22.5%] px-4">
 				{#each posts.slice(1, 4) as post, index}
-					<div class={index < 2 ? 'border-b border-foreground' : ''}>
-						{#if index === 0}
-							<div class="block w-full">
-								<a href="/" class="relative block w-full"
-									><img
-										src={post.mainImage && urlFor(post.mainImage).url()}
-										alt=""
-										class="h-full w-full"
-									/></a
-								>
-							</div>
-						{/if}
-
-						<div class="py-4">
-							<div class="block space-y-2">
-								<h2>
-									<a
-										href="/"
-										class="text-lg font-black leading-tight text-foreground hover:text-accent-foreground"
-										>{post.title}</a
-									>
-								</h2>
-								<p class="line-clamp-4 text-xs">
-									{post.excerpt}
-								</p>
-								<h4 class="text-xs italic">
-									By <a href="/" class="text-primary hover:text-foreground">{post.author?.name}</a>
-								</h4>
-							</div>
-						</div>
-					</div>
+					{@render story({ post, index })}
 				{/each}
 			</div>
 
@@ -87,11 +91,11 @@
 					</div>
 				</div>
 				<div class="flex w-full items-start py-6">
-					<a href="/" class="relative order-2 block w-full basis-1/3 items-center"
+					<a href="/" class="relative order-2 block aspect-video w-full basis-1/3 items-center"
 						><img
-							src="https://amaranth.vsu.edu.ph/images/electronica.png"
+							src={posts[4].mainImage && urlFor(posts[4].mainImage).url()}
 							alt=""
-							class="h-full w-full"
+							class="h-full w-full object-cover"
 						/></a
 					>
 					<div class="grow-1 w-full basis-2/3 pr-6">
@@ -117,87 +121,9 @@
 
 			<div class="w-[22.5%] px-4">
 				{#each posts.slice(5, 8) as post, index}
-					<div class={index < 2 ? 'border-b border-foreground' : ''}>
-						{#if index === 0}
-							<div class="block w-full">
-								<a href="/" class="relative block w-full"
-									><img
-										src={post.mainImage && urlFor(post.mainImage).url()}
-										alt=""
-										class="h-full w-full"
-									/></a
-								>
-							</div>
-						{/if}
-
-						<div class="py-4">
-							<div class="block space-y-2">
-								<h2>
-									<a
-										href="/"
-										class="text-lg font-black leading-tight text-foreground hover:text-accent-foreground"
-										>{post.title}</a
-									>
-								</h2>
-								<p class="line-clamp-4 text-xs">
-									{post.excerpt}
-								</p>
-								<h4 class="text-xs italic">
-									By <a href="/" class="text-primary hover:text-foreground">{post.author?.name}</a>
-								</h4>
-							</div>
-						</div>
-					</div>
+					{@render story({ post, index })}
 				{/each}
 			</div>
 		</div>
-
-		<!-- <div
-				class="mx-auto grid max-w-md grid-flow-dense grid-cols-1 grid-rows-[masonry] gap-8 px-8 text-sm leading-6 text-foreground sm:max-w-2xl sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-cols-4"
-			>
-				{#each top_stories as story}
-					<div class="first:sm:col-span-2 first:xl:col-start-2">
-						<style>
-							/* Add col-span-2 to the 6th child */
-							div > div:nth-child(6) {
-								grid-column: span 2;
-							}
-						</style>
-						<div class="block w-full items-center">
-							<a href="/" class="relative block w-full"
-								><img
-									src="https://amaranth.vsu.edu.ph/images/electronica.png"
-									alt=""
-									class="h-full w-full"
-								/></a
-							>
-						</div>
-						<div class="py-4">
-							<div class="mb-1 flex items-center justify-center">
-								<p class="inline bg-primary">
-									<span class="px-1 text-xs font-bold uppercase text-primary-foreground"
-										>Science</span
-									>
-								</p>
-							</div>
-							<div class="block space-y-2 text-center">
-								<h2>
-									<a
-										href="/"
-										class="text-lg font-black text-foreground hover:text-accent-foreground"
-										>{story.title}</a
-									>
-								</h2>
-								<p class="text-xs">
-									{story.summary}
-								</p>
-								<h4 class="text-xs italic">
-									By <a href="/" class="text-primary hover:text-foreground">{story.author}</a>
-								</h4>
-							</div>
-						</div>
-					</div>
-				{/each}
-			</div> -->
 	</div>
 </div>
