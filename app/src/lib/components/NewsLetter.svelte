@@ -14,7 +14,7 @@
 					The latest news, articles, and resources, sent to your inbox weekly.
 				</p>
 			</div>
-			<div class="ml-8 mt-12 sm:w-full lg:mt-8 lg:flex-1">
+			<div class="lg:mt-8lg: mt-12 sm:w-full lg:ml-8 lg:flex-1">
 				<form class="flex">
 					<label for="email-address" class="sr-only">Email address</label>
 					<Input class="mr-4 h-11 border-foreground" placeholder="Enter your email" />
