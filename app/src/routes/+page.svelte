@@ -1,14 +1,13 @@
 <script lang="ts">
-	import Card from '$lib/components/Card.svelte';
 	import TopStories from '$lib/components/TopStories.svelte';
-	import Welcome from '$lib/components/Welcome.svelte';
 	import NewsLetter from '$lib/components/NewsLetter.svelte';
 	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
 </script>
 
-<TopStories />
+<TopStories posts={data.posts} />
 
 <NewsLetter />
 
@@ -20,7 +19,7 @@
 					<div class="h-16 w-full border-t-4 border-primary"></div>
 				</div>
 				<div class="relative flex">
-					<span class="bg-white p-4 text-2xl font-black uppercase italic"> The Latest </span>
+					<span class="bg-white p-4 font-dm_serif text-2xl uppercase italic"> The Latest </span>
 				</div>
 			</div>
 			<div class="relative space-y-4 bg-white px-4">

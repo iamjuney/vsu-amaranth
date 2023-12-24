@@ -8,13 +8,13 @@
 		<div class="px-8 py-10 sm:py-12 lg:flex lg:items-start lg:py-16">
 			<div class="lg:w-0 lg:flex-1">
 				<h2 class="text-3xl font-extrabold tracking-tight text-foreground">
-					Sign up for our newsletter
+					Be part of our awesome online community!
 				</h2>
 				<p class="mt-4 text-lg text-foreground">
 					The latest news, articles, and resources, sent to your inbox weekly.
 				</p>
 			</div>
-			<div class="mt-12 sm:w-full lg:mt-0 lg:flex-1">
+			<div class="ml-8 mt-12 sm:w-full lg:mt-8 lg:flex-1">
 				<form class="flex">
 					<label for="email-address" class="sr-only">Email address</label>
 					<Input class="mr-4 h-11 border-foreground" placeholder="Enter your email" />

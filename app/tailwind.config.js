@@ -55,7 +55,8 @@ const config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: [...fontFamily.sans]
+				sans: [...fontFamily.sans],
+                dm_serif: ["DM Serif Display", ...fontFamily.sans],
 			}
 		}
 	},

@@ -48,25 +48,25 @@
 				</div>
 
 				<div class="ml-10 hidden space-x-6 uppercase lg:block">
-					<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 						National
 					</a>
-					<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 						Campus
 					</a>
-					<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 						Editorial
 					</a>
-					<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 						Sports
 					</a>
-					<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 						Science
 					</a>
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger
 							><span
-								class="flex text-xs font-semibold uppercase text-foreground hover:text-accent-foreground"
+								class="flex text-xs font-medium uppercase text-foreground hover:text-accent-foreground"
 								>More <ChevronDown size="12" class="ml-1" /></span
 							></DropdownMenu.Trigger
 						>
@@ -83,7 +83,7 @@
 				</div>
 			</div>
 			<div class="ml-10 flex space-x-2">
-				<Button class="text-xs font-semibold">Subscribe</Button>
+				<Button class="text-xs font-medium">Subscribe</Button>
 				<Button variant="ghost" size="icon" onclick={() => (open = !open)} class="bg-transparent"
 					><Search size="16" /></Button
 				>
@@ -92,19 +92,19 @@
 		<div
 			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 uppercase sm:px-6 lg:hidden lg:px-8"
 		>
-			<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+			<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 				National
 			</a>
-			<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+			<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 				Campus
 			</a>
-			<a href="/" class="text-xs font-semibold text-foreground hover:text-accent-foreground">
+			<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
 				Editorial
 			</a>
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger
 					><span
-						class="flex text-xs font-semibold uppercase text-foreground hover:text-accent-foreground"
+						class="flex text-xs font-medium uppercase text-foreground hover:text-accent-foreground"
 						>More <ChevronDown size="12" class="ml-1" /></span
 					></DropdownMenu.Trigger
 				>

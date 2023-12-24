@@ -1,7 +1,6 @@
-import type { PortableTextBlock } from '@portabletext/types';
 import { createClient } from '@sanity/client';
-import type { ImageAsset, Slug } from '@sanity/types';
 import groq from 'groq';
+import type { Post } from '../../types';
 
 import { PUBLIC_SANITY_DATASET, PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
 
@@ -18,7 +17,19 @@ export const client = createClient({
 
 export async function getPosts(): Promise<Post[]> {
 	return await client.fetch(
-		groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`
+		groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc) {
+            _type,
+            _createdAt,
+            title,
+            slug,
+            'author': author->{name, slug, image, bio},
+            excerpt,
+            mainImage,
+            imageCourtesy,
+            'categories': categories[]->{title, slug},
+            publishedAt,
+            body
+        }`
 	);
 }
 
@@ -28,12 +39,4 @@ export async function getPost(slug: string): Promise<Post> {
 	});
 }
 
-export interface Post {
-	_type: 'post';
-	_createdAt: string;
-	title?: string;
-	slug: Slug;
-	excerpt?: string;
-	mainImage?: ImageAsset;
-	body: PortableTextBlock[];
-}
+
