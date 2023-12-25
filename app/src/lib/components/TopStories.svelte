@@ -11,11 +11,15 @@
 	<div class={index < 2 ? 'border-b border-foreground' : ''}>
 		{#if index === 0}
 			<div class="block w-full">
-				<a href="/post/{post.slug}" class="relative block aspect-video w-full"
+				<a
+					href="/post/{post.slug}"
+					class="relative block aspect-video w-full overflow-hidden"
+					data-sveltekit-preload-data="hover"
 					><img
 						src={post.mainImage && urlFor(post.mainImage).url()}
 						alt=""
-						class="h-full w-full object-cover"
+						class="h-full w-full object-cover hover:scale-105"
+						style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 					/></a
 				>
 			</div>
@@ -27,7 +31,7 @@
 					<a
 						href="/post/{post.slug}"
 						class="text-lg font-black leading-tight text-foreground hover:text-accent-foreground"
-						>{post.title}</a
+						data-sveltekit-preload-data="hover">{post.title}</a
 					>
 				</h2>
 				<h6 class="line-clamp-4 text-xs">
@@ -62,11 +66,15 @@
 			<div class="w-[55%] px-4">
 				<div class="border-b border-foreground">
 					<div class="block w-full items-center">
-						<a href="/post/{posts[0].slug}" class="relative block aspect-video w-full"
+						<a
+							href="/post/{posts[0].slug}"
+							class="relative block aspect-video w-full overflow-hidden"
+							data-sveltekit-preload-data="hover"
 							><img
 								src={posts[0].mainImage && urlFor(posts[0].mainImage).url()}
 								alt=""
-								class="h-full w-full object-cover"
+								class="h-full w-full object-cover hover:scale-105"
+								style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 							/></a
 						>
 					</div>
@@ -83,7 +91,7 @@
 								<a
 									href="/post/{posts[0].slug}"
 									class="text-4xl font-black text-foreground hover:text-accent-foreground"
-									>{posts[0].title}</a
+									data-sveltekit-preload-data="hover">{posts[0].title}</a
 								>
 							</h2>
 							<h6 class="line-clamp-3">
@@ -99,11 +107,13 @@
 				<div class="flex w-full items-start py-6">
 					<a
 						href="/post/{posts[4].slug}"
-						class="relative order-2 block aspect-video w-full basis-1/3 items-center"
+						class="relative order-2 block aspect-video w-full basis-1/3 items-center overflow-hidden"
+						data-sveltekit-preload-data="hover"
 						><img
 							src={posts[4].mainImage && urlFor(posts[4].mainImage).url()}
 							alt=""
-							class="h-full w-full object-cover"
+							class="h-full w-full object-cover hover:scale-105"
+							style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 						/></a
 					>
 					<div class="grow-1 w-full basis-2/3 pr-6">
@@ -112,7 +122,7 @@
 								<a
 									href="/post/{posts[4].slug}"
 									class="text-lg font-black leading-tight text-foreground hover:text-accent-foreground"
-									>{posts[4].title}</a
+									data-sveltekit-preload-data="hover">{posts[4].title}</a
 								>
 							</h2>
 							<h6 class="line-clamp-4 text-xs">

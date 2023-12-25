@@ -42,7 +42,7 @@
 		>
 			<div class="flex items-center">
 				<div class="z-10 flex-grow-0 basis-auto rounded-b bg-primary md:-mb-8 md:-mt-6">
-					<a href="/" class="">
+					<a href="/" class="" data-sveltekit-preload-data>
 						<span class="sr-only">Amaranth</span>
 						<img class="h-10 w-auto md:h-20" src={logo} alt="" />
 					</a>

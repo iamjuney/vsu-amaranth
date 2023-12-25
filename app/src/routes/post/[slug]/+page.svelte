@@ -4,7 +4,8 @@
 	import { urlFor } from '$lib/utils/image';
 	import { onMount } from 'svelte';
 	import Image from '$lib/components/Image.svelte';
-	import { FacebookIcon, InstagramIcon, TwitterIcon } from 'lucide-svelte';
+	import { FacebookIcon, TwitterIcon, MessageSquareIcon, LinkIcon } from 'lucide-svelte';
+	import { useLazyImage as lazyImage } from 'svelte-lazy-image';
 
 	let { data } = $props();
 </script>
@@ -29,17 +30,21 @@
 				<div class="mt-4 flex items-center space-x-2 text-sm text-gray-500">
 					<span>By</span>
 					<a href="/" class="text-primary hover:text-foreground">{data.author?.name}</a>
+					<span>|</span>
 					<time datetime="2023-12-16T07:00:00Z">{formatDate(data.publishedAt, true, true)}</time>
+					<span>|</span>
+					<MessageSquareIcon class="mr-1" size="16" />
+					<span class="flex items-center underline"> 3 comments</span>
 				</div>
 				<div class="mt-4 flex space-x-4">
 					<a href="/" class="block">
 						<FacebookIcon size="24" class="h-6 w-6 text-gray-500" />
 					</a>
 					<a href="/" class="block">
-						<InstagramIcon size="24" class="h-6 w-6 text-gray-500" />
+						<TwitterIcon size="24" class="h-6 w-6 text-gray-500" />
 					</a>
 					<a href="/" class="block">
-						<TwitterIcon size="24" class="h-6 w-6 text-gray-500" />
+						<LinkIcon size="24" class="h-6 w-6 text-gray-500" />
 					</a>
 				</div>
 			</div>
@@ -51,6 +56,7 @@
 								src={urlFor(data.mainImage).url()}
 								alt="Cover image for {data.title}"
 								class="h-auto w-full"
+								use:lazyImage={{ threshold: 0.5 }}
 							/>
 						{/if}
 						<p class="mt-2 text-sm text-gray-500">
@@ -69,7 +75,7 @@
 					</div>
 				</div>
 				<div>
-					<h2 class="text-lg font-semibold">Most Read</h2>
+					<h2 class="text-lg font-black">Most Read</h2>
 					<ol class="mt-4 space-y-4">
 						<li>
 							<a href="/" class="block"
