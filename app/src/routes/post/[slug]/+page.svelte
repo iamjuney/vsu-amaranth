@@ -60,7 +60,7 @@
 							{data.imageCourtesy}
 						</p>
 					</div>
-					<div class="prose prose-indigo prose-lg mt-6 max-w-full text-foreground">
+					<div class="prose prose-lg prose-indigo mt-6 max-w-full text-foreground">
 						<PortableText
 							value={data.body}
 							components={{
@@ -76,37 +76,27 @@
 					<ol class="mt-4 space-y-4">
 						<li>
 							<a href="/" class="block"
-								><h3 class="text-base font-medium text-gray-900">
-									In a big victory for Trump, the Supreme Court tells Jack Smith to go away
-								</h3></a
+								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
 							<a href="/" class="block"
-								><h3 class="text-base font-medium text-gray-900">
-									A guide to difficult conversations for people who hate confrontation
-								</h3></a
+								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
 							<a href="/" class="block"
-								><h3 class="text-base font-medium text-gray-900">
-									Police are solving fewer crimes. Why?
-								</h3></a
+								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
 							<a href="/" class="block"
-								><h3 class="text-base font-medium text-gray-900">
-									Missing the feeling of a white Christmas? That might be solastalgia.
-								</h3></a
+								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
 							<a href="/" class="block"
-								><h3 class="text-base font-medium text-gray-900">
-									Starbucks has lost $11 billion market value, and not because of boycotts
-								</h3></a
+								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 					</ol>

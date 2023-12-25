@@ -36,12 +36,12 @@
 									<a
 										href="/"
 										class="text-xl font-black leading-tight text-foreground hover:text-accent-foreground"
-										>The Israel-Hamas war is shifting quickly. Find the latest coverage from Vox
-										here.</a
+										>Hello World</a
 									>
 								</h2>
 								<h4>
-									By <a href="/" class="text-primary hover:text-foreground">Vox Staff</a> | October 7
+									By <a href="/" class="text-primary hover:text-foreground">Super User</a> | October
+									7
 								</h4>
 							</div>
 						</div>
