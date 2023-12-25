@@ -16,8 +16,8 @@
 					class="relative block aspect-video w-full overflow-hidden"
 					data-sveltekit-preload-data="hover"
 					><img
-						src={post.mainImage && urlFor(post.mainImage).url()}
-						alt=""
+						src={urlFor(post.mainImage).url()}
+						alt={post.imageCourtesy}
 						class="h-full w-full object-cover hover:scale-105"
 						style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 					/></a
@@ -71,8 +71,8 @@
 							class="relative block aspect-video w-full overflow-hidden"
 							data-sveltekit-preload-data="hover"
 							><img
-								src={posts[0].mainImage && urlFor(posts[0].mainImage).url()}
-								alt=""
+								src={urlFor(posts[0].mainImage).url()}
+								alt={posts[0].imageCourtesy}
 								class="h-full w-full object-cover hover:scale-105"
 								style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 							/></a
@@ -110,8 +110,8 @@
 						class="relative order-2 block aspect-video w-full basis-1/3 items-center overflow-hidden"
 						data-sveltekit-preload-data="hover"
 						><img
-							src={posts[4].mainImage && urlFor(posts[4].mainImage).url()}
-							alt=""
+							src={urlFor(posts[4].mainImage).url()}
+							alt={posts[4].imageCourtesy}
 							class="h-full w-full object-cover hover:scale-105"
 							style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 						/></a

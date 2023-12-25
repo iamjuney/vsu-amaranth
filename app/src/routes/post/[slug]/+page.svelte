@@ -2,10 +2,8 @@
 	import { PortableText } from '@portabletext/svelte';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
-	import { onMount } from 'svelte';
 	import Image from '$lib/components/Image.svelte';
 	import { FacebookIcon, TwitterIcon, MessageSquareIcon, LinkIcon } from 'lucide-svelte';
-	import { useLazyImage as lazyImage } from 'svelte-lazy-image';
 
 	let { data } = $props();
 </script>
@@ -54,9 +52,8 @@
 						{#if data.mainImage}
 							<img
 								src={urlFor(data.mainImage).url()}
-								alt="Cover image for {data.title}"
+								alt={data.imageCourtesy}
 								class="h-auto w-full"
-								use:lazyImage={{ threshold: 0.5 }}
 							/>
 						{/if}
 						<p class="mt-2 text-sm text-gray-500">

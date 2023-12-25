@@ -8,7 +8,7 @@ export interface Post {
 	slug: Slug;
     author?: Author;
 	excerpt?: string;
-	mainImage?: ImageAsset;
+	mainImage: ImageAsset;
     imageCourtesy?: string;
     categories: Category[];
     publishedAt: string;
