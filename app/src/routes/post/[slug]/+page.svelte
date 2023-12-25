@@ -4,35 +4,111 @@
 	import { urlFor } from '$lib/utils/image';
 	import { onMount } from 'svelte';
 	import Image from '$lib/components/Image.svelte';
+	import { FacebookIcon, InstagramIcon, TwitterIcon } from 'lucide-svelte';
 
 	let { data } = $props();
 </script>
 
-<section class="post">
-	{#if data.mainImage}
-		<img
-			class="post__cover"
-			src={urlFor(data.mainImage).url()}
-			alt="Cover image for {data.title}"
-		/>
-	{:else}
-		<div class="post__cover--none" />
-	{/if}
-	<div class="post__container">
-		<h1 class="post__title">{data.title}</h1>
-		<p class="post__excerpt">{data.excerpt}</p>
-		<p class="post__date">
-			{formatDate(data._createdAt)}
-		</p>
-		<div class="post__content">
-			<PortableText
-				value={data.body}
-				components={{
-					types: {
-						image: Image
-					}
-				}}
-			/>
+<div class="relative overflow-hidden bg-white py-8">
+	<div class="relative px-4 sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+			<div>
+				{#each data.categories as category}
+					<a href="/" class="inline bg-primary p-1">
+						<span class="text-sm uppercase tracking-wide text-primary-foreground"
+							>{category.title}</span
+						>
+					</a>
+				{/each}
+				<h1 class="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
+					{data.title}
+				</h1>
+				<p class="mt-2 text-lg text-gray-500">
+					{data.excerpt}
+				</p>
+				<div class="mt-4 flex items-center space-x-2 text-sm text-gray-500">
+					<span>By</span>
+					<a href="/" class="text-primary hover:text-foreground">{data.author?.name}</a>
+					<time datetime="2023-12-16T07:00:00Z">{formatDate(data.publishedAt, true, true)}</time>
+				</div>
+				<div class="mt-4 flex space-x-4">
+					<a href="/" class="block">
+						<FacebookIcon size="24" class="h-6 w-6 text-gray-500" />
+					</a>
+					<a href="/" class="block">
+						<InstagramIcon size="24" class="h-6 w-6 text-gray-500" />
+					</a>
+					<a href="/" class="block">
+						<TwitterIcon size="24" class="h-6 w-6 text-gray-500" />
+					</a>
+				</div>
+			</div>
+			<div class="grid grid-cols-3 gap-8">
+				<div class="col-span-2">
+					<div class="mt-6">
+						{#if data.mainImage}
+							<img
+								src={urlFor(data.mainImage).url()}
+								alt="Cover image for {data.title}"
+								class="h-auto w-full"
+							/>
+						{/if}
+						<p class="mt-2 text-sm text-gray-500">
+							{data.imageCourtesy}
+						</p>
+					</div>
+					<div class="prose prose-indigo prose-lg mt-6 max-w-full text-foreground">
+						<PortableText
+							value={data.body}
+							components={{
+								types: {
+									image: Image
+								}
+							}}
+						/>
+					</div>
+				</div>
+				<div>
+					<h2 class="text-lg font-semibold">Most Read</h2>
+					<ol class="mt-4 space-y-4">
+						<li>
+							<a href="/" class="block"
+								><h3 class="text-base font-medium text-gray-900">
+									In a big victory for Trump, the Supreme Court tells Jack Smith to go away
+								</h3></a
+							>
+						</li>
+						<li>
+							<a href="/" class="block"
+								><h3 class="text-base font-medium text-gray-900">
+									A guide to difficult conversations for people who hate confrontation
+								</h3></a
+							>
+						</li>
+						<li>
+							<a href="/" class="block"
+								><h3 class="text-base font-medium text-gray-900">
+									Police are solving fewer crimes. Why?
+								</h3></a
+							>
+						</li>
+						<li>
+							<a href="/" class="block"
+								><h3 class="text-base font-medium text-gray-900">
+									Missing the feeling of a white Christmas? That might be solastalgia.
+								</h3></a
+							>
+						</li>
+						<li>
+							<a href="/" class="block"
+								><h3 class="text-base font-medium text-gray-900">
+									Starbucks has lost $11 billion market value, and not because of boycotts
+								</h3></a
+							>
+						</li>
+					</ol>
+				</div>
+			</div>
 		</div>
 	</div>
-</section>
+</div>

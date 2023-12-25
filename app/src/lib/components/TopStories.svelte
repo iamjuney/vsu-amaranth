@@ -2,7 +2,7 @@
 	import type { Post } from '../../types';
 	import { urlFor } from '$lib/utils/image';
 	import { formatDate } from '$lib/utils';
-	import { MessageSquare } from 'lucide-svelte';
+	import { MessageSquareIcon } from 'lucide-svelte';
 
 	let { posts } = $props<{ posts: Post[] }>();
 </script>
@@ -36,7 +36,7 @@
 				<p class="flex items-center space-x-2 text-xs">
 					<a href="/" class="text-primary hover:text-foreground">{post.author?.name}</a>
 					<span>{formatDate(post.publishedAt)}</span><span>|</span>
-					<span class="flex items-center"><MessageSquare class="mr-1" size="12" /> 3</span>
+					<span class="flex items-center"><MessageSquareIcon class="mr-1" size="12" /> 3</span>
 				</p>
 			</div>
 		</div>
@@ -74,7 +74,7 @@
 						<div class="mb-1 flex items-center justify-center">
 							<a href="/" class="inline bg-primary">
 								<span class="px-1 text-xs font-medium uppercase text-primary-foreground"
-									>{posts[0].categories && posts[0].categories[0]?.title}</span
+									>{posts[0].categories[0]?.title}</span
 								>
 							</a>
 						</div>
@@ -121,7 +121,8 @@
 							<p class="flex items-center space-x-2 text-xs">
 								<a href="/" class="text-primary hover:text-foreground">{posts[4].author?.name}</a>
 								<span>{formatDate(posts[4].publishedAt ?? '')}</span><span>|</span>
-								<span class="flex items-center"><MessageSquare class="mr-1" size="12" /> 3</span>
+								<span class="flex items-center"><MessageSquareIcon class="mr-1" size="12" /> 3</span
+								>
 							</p>
 						</div>
 					</div>

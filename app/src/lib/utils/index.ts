@@ -3,12 +3,23 @@ import { twMerge } from "tailwind-merge";
 import { cubicOut } from "svelte/easing";
 import type { TransitionConfig } from "svelte/transition";
 
-export function formatDate(date: string) {
-	return new Date(date).toLocaleDateString('en-US', {
-		month: 'short',
-		day: 'numeric',
-		// year: 'numeric'
-	});
+export function formatDate(date: string, showYear: boolean = false, showTime: boolean = false) {
+    const options: Intl.DateTimeFormatOptions = {
+        month: 'short',
+        day: 'numeric',
+    };
+
+    if (showYear) {
+        options.year = 'numeric';
+    }
+
+    if (showTime) {
+        options.hour = 'numeric';
+        options.minute = 'numeric';
+        options.second = 'numeric';
+    }
+
+    return new Date(date).toLocaleDateString('en-US', options);
 }
 
 export function cn(...inputs: ClassValue[]) {

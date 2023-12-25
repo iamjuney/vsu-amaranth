@@ -5,8 +5,8 @@
 
 <footer class="mt-8 bg-primary" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
-	<div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-10 lg:py-12">
-		<div class="px-6 lg:grid lg:grid-cols-3 lg:gap-8">
+	<div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-12">
+		<div class="lg:grid lg:grid-cols-3 lg:gap-8">
 			<div class="space-y-8 lg:col-span-1">
 				<a href="/" class="">
 					<span class="sr-only">Workflow</span>

@@ -10,8 +10,8 @@ export interface Post {
 	excerpt?: string;
 	mainImage?: ImageAsset;
     imageCourtesy?: string;
-    categories?: Category[];
-    publishedAt?: string;
+    categories: Category[];
+    publishedAt: string;
 	body: PortableTextBlock[];
 }
 
