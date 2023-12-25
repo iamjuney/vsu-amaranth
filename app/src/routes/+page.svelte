@@ -23,7 +23,7 @@
 			<div class="relative space-y-4 bg-white px-4">
 				{#each { length: 10 } as _, i}
 					<div class="flex w-full items-start border-t first:border-0">
-						<a href="/" class="relative block w-full basis-1/3 items-center">
+						<a href="/post/hello-world" class="relative block w-full basis-1/3 items-center">
 							<img
 								src="https://images.unsplash.com/photo-1682687982423-295485af248a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								alt="Unsplash"
@@ -34,7 +34,7 @@
 							<div class="block space-y-2">
 								<h2>
 									<a
-										href="/"
+										href="/post/hello-world"
 										class="text-xl font-black leading-tight text-foreground hover:text-accent-foreground"
 										>Hello World</a
 									>

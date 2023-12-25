@@ -75,27 +75,27 @@
 					<h2 class="text-lg font-black">Most Read</h2>
 					<ol class="mt-4 space-y-4">
 						<li>
-							<a href="/" class="block"
+							<a href="/post/hello-world" class="block"
 								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
-							<a href="/" class="block"
+							<a href="/post/hello-world" class="block"
 								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
-							<a href="/" class="block"
+							<a href="/post/hello-world" class="block"
 								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
-							<a href="/" class="block"
+							<a href="/post/hello-world" class="block"
 								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
 						<li>
-							<a href="/" class="block"
+							<a href="/post/hello-world" class="block"
 								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
 							>
 						</li>
