@@ -56,14 +56,13 @@ const config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans],
-                dm_serif: ["DM Serif Display", ...fontFamily.sans],
+                arial: ["Arial", "Helvetica", "sans-serif"],
 			}
 		}
 	},
     plugins: [
         require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio')
+        require('@tailwindcss/forms'),
     ],
 };
 

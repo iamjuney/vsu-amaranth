@@ -19,13 +19,13 @@
 						>
 					</a>
 				{/each}
-				<h1 class="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
+				<h1 class="font-helvetica-neue mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
 					{data.title}
 				</h1>
-				<p class="mt-2 text-lg text-gray-500">
+				<p class="mt-2 text-lg text-foreground">
 					{data.excerpt}
 				</p>
-				<div class="mt-4 flex items-center space-x-2 text-sm text-gray-500">
+				<div class="mt-4 flex items-center space-x-2 text-sm text-foreground">
 					<span>By</span>
 					<a href="/" class="text-primary hover:text-foreground">{data.author?.name}</a>
 					<span>|</span>
@@ -36,13 +36,13 @@
 				</div>
 				<div class="mt-4 flex space-x-4">
 					<a href="/" class="block">
-						<FacebookIcon size="24" class="h-6 w-6 text-gray-500" />
+						<FacebookIcon size="24" class="h-6 w-6 text-foreground" />
 					</a>
 					<a href="/" class="block">
-						<TwitterIcon size="24" class="h-6 w-6 text-gray-500" />
+						<TwitterIcon size="24" class="h-6 w-6 text-foreground" />
 					</a>
 					<a href="/" class="block">
-						<LinkIcon size="24" class="h-6 w-6 text-gray-500" />
+						<LinkIcon size="24" class="h-6 w-6 text-foreground" />
 					</a>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 								class="h-auto w-full"
 							/>
 						{/if}
-						<p class="mt-2 text-sm text-gray-500">
+						<p class="mt-2 text-sm text-foreground">
 							{data.imageCourtesy}
 						</p>
 					</div>
@@ -72,33 +72,48 @@
 					</div>
 				</div>
 				<div>
-					<h2 class="text-lg font-black">Most Read</h2>
-					<ol class="mt-4 space-y-4">
-						<li>
-							<a href="/post/hello-world" class="block"
-								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
-							>
-						</li>
-						<li>
-							<a href="/post/hello-world" class="block"
-								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
-							>
-						</li>
-						<li>
-							<a href="/post/hello-world" class="block"
-								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
-							>
-						</li>
-						<li>
-							<a href="/post/hello-world" class="block"
-								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
-							>
-						</li>
-						<li>
-							<a href="/post/hello-world" class="block"
-								><h3 class="text-base font-medium text-gray-900">Hello World</h3></a
-							>
-						</li>
+					<h2 class="ml-11 text-primary">Most Read</h2>
+					<ol class="mt-6 space-y-4">
+						{#each { length: 5 } as _, i}
+							<li class="flex flex-row justify-center">
+								<div
+									class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-[11px] text-foreground"
+								>
+									{i + 1}
+								</div>
+								<div class="ml-6 flex w-full items-start border-b pb-4">
+									<a
+										href="/post/hello-world"
+										class="aspect-video relative order-2 block w-full basis-1/3 items-center overflow-hidden"
+										data-sveltekit-preload-data="hover"
+										><img
+											src="https://images.unsplash.com/photo-1682687982423-295485af248a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+											alt="Unsplash"
+											class="h-full w-full object-cover hover:scale-105"
+											style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
+										/></a
+									>
+									<div class="grow-1 w-full basis-2/3">
+										<div class="block space-y-2">
+											<h2>
+												<a
+													href="/post/hello-world"
+													class="font-helvetica-neue text-xl font-black leading-tight text-foreground hover:text-accent-foreground"
+													data-sveltekit-preload-data="hover">Hello World</a
+												>
+											</h2>
+											<p class="flex items-center space-x-2 text-xs">
+												<a href="/" class="text-primary hover:text-foreground">Super User</a>
+												<span>Dec 24</span><span>|</span>
+												<span class="flex items-center"
+													><MessageSquareIcon class="mr-1" size="12" /> 3</span
+												>
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+						{/each}
 					</ol>
 				</div>
 			</div>

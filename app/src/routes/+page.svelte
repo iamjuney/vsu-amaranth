@@ -17,7 +17,7 @@
 					<div class="h-16 w-full border-t-4 border-primary"></div>
 				</div>
 				<div class="relative flex">
-					<span class="bg-white p-4 font-dm_serif text-2xl uppercase italic"> The Latest </span>
+					<span class="bg-white p-4 text-2xl uppercase italic"> The Latest </span>
 				</div>
 			</div>
 			<div class="relative space-y-4 bg-white px-4">

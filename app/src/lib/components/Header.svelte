@@ -6,6 +6,33 @@
 	import logo from '$lib/images/amaranth_logo.png';
 
 	let open = $state(false);
+	const links = [
+		{
+			name: 'National',
+			href: '/national',
+			current: true
+		},
+		{
+			name: 'Campus',
+			href: '/campus',
+			current: false
+		},
+		{
+			name: 'Editorial',
+			href: '/editorial',
+			current: false
+		},
+		{
+			name: 'Sports',
+			href: '/sports',
+			current: false
+		},
+		{
+			name: 'Science',
+			href: '/science',
+			current: false
+		}
+	];
 
 	$effect(() => {
 		function handleKeydown(e: KeyboardEvent) {
@@ -49,25 +76,20 @@
 				</div>
 
 				<div class="ml-10 hidden space-x-6 uppercase lg:block">
-					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-						National
-					</a>
-					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-						Campus
-					</a>
-					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-						Editorial
-					</a>
-					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-						Sports
-					</a>
-					<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-						Science
-					</a>
+					{#each links as link}
+						<a
+							href={link.href}
+							class="text-xs font-black text-foreground hover:text-accent-foreground"
+							aria-current={link.current}
+						>
+							{link.name}
+						</a>
+					{/each}
+
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger
 							><span
-								class="flex text-xs font-medium uppercase text-foreground hover:text-accent-foreground"
+								class="flex text-xs font-black uppercase text-foreground hover:text-accent-foreground"
 								>More <ChevronDown size="12" class="ml-1" /></span
 							></DropdownMenu.Trigger
 						>
@@ -84,33 +106,26 @@
 				</div>
 			</div>
 			<div class="ml-10 flex space-x-2">
-				<Button class="text-xs font-medium">Subscribe</Button>
+				<Button class="text-xs">Subscribe</Button>
 				<Button variant="ghost" size="icon" onclick={() => (open = !open)} class="bg-transparent"
 					><Search size="16" /></Button
 				>
 			</div>
 		</div>
 		<div
-			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 uppercase sm:px-6 lg:hidden lg:px-8"
+			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 font-black uppercase sm:px-6 lg:hidden lg:px-8"
 		>
-			<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-				National
-			</a>
-			<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-				Campus
-			</a>
-			<a href="/" class="text-xs font-medium text-foreground hover:text-accent-foreground">
-				Editorial
-			</a>
+			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> National </a>
+			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> Campus </a>
+			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> Editorial </a>
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger
-					><span
-						class="flex text-xs font-medium uppercase text-foreground hover:text-accent-foreground"
+					><span class="flex text-xs uppercase text-foreground hover:text-accent-foreground"
 						>More <ChevronDown size="12" class="ml-1" /></span
 					></DropdownMenu.Trigger
 				>
 				<DropdownMenu.Content>
-					<DropdownMenu.Group class="uppercase ">
+					<DropdownMenu.Group class="uppercase">
 						<DropdownMenu.Item>Science</DropdownMenu.Item>
 						<DropdownMenu.Item>Technology</DropdownMenu.Item>
 						<DropdownMenu.Item>Literary</DropdownMenu.Item>
