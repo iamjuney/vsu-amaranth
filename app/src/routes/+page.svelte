@@ -1,8 +1,6 @@
 <script lang="ts">
 	import TopStories from '$lib/components/TopStories.svelte';
 	import NewsLetter from '$lib/components/NewsLetter.svelte';
-	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
 
 	let { data } = $props();
 </script>
@@ -58,13 +56,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <section>
-	{#if data.posts.length}
-		{#each data.posts as post}
-			<Card {post} />
-		{/each}
-	{:else}
-		<Welcome />
-	{/if}
-</section> -->

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Post, Author, Category } from '../../types';
+	import type { Post } from '../../types';
 	import { urlFor } from '$lib/utils/image';
 	import { formatDate } from '$lib/utils';
 	import { MessageSquare } from 'lucide-svelte';
@@ -62,7 +62,7 @@
 			<div class="w-[55%] px-4">
 				<div class="border-b border-foreground">
 					<div class="block w-full items-center">
-						<a href="/" class="relative block aspect-video w-full"
+						<a href="/post/{posts[0].slug}" class="relative block aspect-video w-full"
 							><img
 								src={posts[0].mainImage && urlFor(posts[0].mainImage).url()}
 								alt=""
@@ -80,7 +80,9 @@
 						</div>
 						<div class="block space-y-2 text-center">
 							<h2>
-								<a href="/" class="text-4xl font-black text-foreground hover:text-accent-foreground"
+								<a
+									href="/post/{posts[0].slug}"
+									class="text-4xl font-black text-foreground hover:text-accent-foreground"
 									>{posts[0].title}</a
 								>
 							</h2>
@@ -95,7 +97,9 @@
 					</div>
 				</div>
 				<div class="flex w-full items-start py-6">
-					<a href="/" class="relative order-2 block aspect-video w-full basis-1/3 items-center"
+					<a
+						href="/post/{posts[4].slug}"
+						class="relative order-2 block aspect-video w-full basis-1/3 items-center"
 						><img
 							src={posts[4].mainImage && urlFor(posts[4].mainImage).url()}
 							alt=""
@@ -106,7 +110,7 @@
 						<div class="block space-y-2">
 							<h2>
 								<a
-									href="/"
+									href="/post/{posts[4].slug}"
 									class="text-lg font-black leading-tight text-foreground hover:text-accent-foreground"
 									>{posts[4].title}</a
 								>

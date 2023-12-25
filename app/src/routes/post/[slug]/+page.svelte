@@ -2,6 +2,8 @@
 	import { PortableText } from '@portabletext/svelte';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
+	import { onMount } from 'svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	let { data } = $props();
 </script>
@@ -23,7 +25,14 @@
 			{formatDate(data._createdAt)}
 		</p>
 		<div class="post__content">
-			<PortableText value={data.body} components={{}} />
+			<PortableText
+				value={data.body}
+				components={{
+					types: {
+						image: Image
+					}
+				}}
+			/>
 		</div>
 	</div>
 </section>
