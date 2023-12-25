@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { Post, Author, Category } from '../../types';
 	import { urlFor } from '$lib/utils/image';
+	import { formatDate } from '$lib/utils';
+	import { MessageSquare } from 'lucide-svelte';
 
 	let { posts } = $props<{ posts: Post[] }>();
 </script>
@@ -9,7 +11,7 @@
 	<div class={index < 2 ? 'border-b border-foreground' : ''}>
 		{#if index === 0}
 			<div class="block w-full">
-				<a href="/" class="relative block aspect-video w-full"
+				<a href="/post/{post.slug}" class="relative block aspect-video w-full"
 					><img
 						src={post.mainImage && urlFor(post.mainImage).url()}
 						alt=""
@@ -23,17 +25,19 @@
 			<div class="block space-y-2">
 				<h2>
 					<a
-						href="/"
+						href="/post/{post.slug}"
 						class="text-lg font-black leading-tight text-foreground hover:text-accent-foreground"
 						>{post.title}</a
 					>
 				</h2>
-				<p class="line-clamp-4 text-xs">
+				<h6 class="line-clamp-4 text-xs">
 					{post.excerpt}
+				</h6>
+				<p class="flex items-center space-x-2 text-xs">
+					<a href="/" class="text-primary hover:text-foreground">{post.author?.name}</a>
+					<span>{formatDate(post.publishedAt)}</span><span>|</span>
+					<span class="flex items-center"><MessageSquare class="mr-1" size="12" /> 3</span>
 				</p>
-				<h4 class="text-xs italic">
-					By <a href="/" class="text-primary hover:text-foreground">{post.author?.name}</a>
-				</h4>
 			</div>
 		</div>
 	</div>
@@ -80,13 +84,13 @@
 									>{posts[0].title}</a
 								>
 							</h2>
-							<p class="line-clamp-3">
+							<h6 class="line-clamp-3">
 								{posts[0].excerpt}
+							</h6>
+							<p class="flex items-center justify-center space-x-2 text-base font-medium italic">
+								<a href="/" class=" text-primary hover:text-foreground">{posts[0].author?.name}</a>
+								<span>{formatDate(posts[0].publishedAt ?? '')}</span>
 							</p>
-							<h4 class="italic">
-								By <a href="/" class="text-primary hover:text-foreground">{posts[0].author?.name}</a
-								>
-							</h4>
 						</div>
 					</div>
 				</div>
@@ -107,13 +111,14 @@
 									>{posts[4].title}</a
 								>
 							</h2>
-							<p class="line-clamp-3 text-xs">
+							<h6 class="line-clamp-4 text-xs">
 								{posts[4].excerpt}
+							</h6>
+							<p class="flex items-center space-x-2 text-xs">
+								<a href="/" class="text-primary hover:text-foreground">{posts[4].author?.name}</a>
+								<span>{formatDate(posts[4].publishedAt ?? '')}</span><span>|</span>
+								<span class="flex items-center"><MessageSquare class="mr-1" size="12" /> 3</span>
 							</p>
-							<h4 class="text-xs italic">
-								By <a href="/" class="text-primary hover:text-foreground">{posts[4].author?.name}</a
-								>
-							</h4>
 						</div>
 					</div>
 				</div>

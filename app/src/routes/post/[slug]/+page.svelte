@@ -2,7 +2,6 @@
 	import { PortableText } from '@portabletext/svelte';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
-	import type { PageData } from './$types';
 
 	let { data } = $props();
 </script>

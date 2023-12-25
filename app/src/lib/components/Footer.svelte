@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Facebook, Instagram, Twitter } from 'lucide-svelte';
+	import logo from '$lib/images/amaranth_logo.png';
 </script>
 
 <footer class="mt-8 bg-primary" aria-labelledby="footer-heading">
@@ -9,7 +10,7 @@
 			<div class="space-y-8 lg:col-span-1">
 				<a href="/" class="">
 					<span class="sr-only">Workflow</span>
-					<img class="h-10 w-auto md:h-20" src="./amaranth_logo.png" alt="" />
+					<img class="h-10 w-auto md:h-20" src={logo} alt="" />
 				</a>
 				<p class="text-sm text-white">
 					Amaranth is the official publication network of Visayas State University.

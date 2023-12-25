@@ -3,6 +3,7 @@
 	import { Search, ChevronDown } from 'lucide-svelte';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import * as Command from '$lib/components/ui/command';
+	import logo from '$lib/images/amaranth_logo.png';
 
 	let open = $state(false);
 
@@ -43,7 +44,7 @@
 				<div class="z-10 flex-grow-0 basis-auto rounded-b bg-primary md:-mb-8 md:-mt-6">
 					<a href="/" class="">
 						<span class="sr-only">Amaranth</span>
-						<img class="h-10 w-auto md:h-20" src="./amaranth_logo.png" alt="" />
+						<img class="h-10 w-auto md:h-20" src={logo} alt="" />
 					</a>
 				</div>
 

@@ -21,7 +21,7 @@ export async function getPosts(): Promise<Post[]> {
             _type,
             _createdAt,
             title,
-            slug,
+            'slug': slug.current,
             'author': author->{name, slug, image, bio},
             excerpt,
             mainImage,
@@ -34,7 +34,19 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getPost(slug: string): Promise<Post> {
-	return await client.fetch(groq`*[_type == "post" && slug.current == $slug][0]`, {
+	return await client.fetch(groq`*[_type == "post" && slug.current == $slug][0] {
+        _type,
+            _createdAt,
+            title,
+            slug,
+            'author': author->{name, slug, image, bio},
+            excerpt,
+            mainImage,
+            imageCourtesy,
+            'categories': categories[]->{title, slug},
+            publishedAt,
+            body
+    }`, {
 		slug
 	});
 }
