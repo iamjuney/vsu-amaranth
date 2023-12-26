@@ -1,15 +1,24 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'article',
+  title: 'Article',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
+      description: 'A suitable title within 60 characters.',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(10).max(60),
+    }),
+    defineField({
+      name: 'description',
+      description: 'A fitting description of the article.',
+      type: 'text',
+      rows: 4,
+      title: 'Description',
+      validation: (Rule) => Rule.required().min(100).max(350),
     }),
     defineField({
       name: 'slug',
@@ -25,13 +34,8 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
+      validation: (Rule) => Rule.required(),
       to: [{type: 'author'}],
-    }),
-    defineField({
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-      rows: 4,
     }),
     defineField({
       name: 'mainImage',
@@ -40,17 +44,31 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'source',
+          type: 'string',
+          title: 'Alt text',
+          description: 'E.g. Photo by ...',
+          options: {
+            isHighlighted: true, // <-- make this field easily accessible
+          },
+        },
+      ],
     }),
     defineField({
-      name: 'imageCourtesy',
-      title: 'Image courtesy',
-      type: 'string',
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      validation: (Rule) => Rule.required(),
+      to: {type: 'category'},
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      name: 'subcategory',
+      title: 'Subcategory',
+      type: 'reference',
+      validation: (Rule) => Rule.required(),
+      to: {type: 'subcategory'},
     }),
     defineField({
       name: 'publishedAt',
@@ -68,6 +86,12 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    }),
+    defineField({
+      name: 'comments',
+      title: 'Comments',
+      type: 'array',
+      of: [{type: 'comment'}],
     }),
   ],
   preview: {

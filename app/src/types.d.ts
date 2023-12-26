@@ -1,18 +1,19 @@
 import type { PortableTextBlock } from '@portabletext/types';
 import type { ImageAsset, Slug } from '@sanity/types';
 
-export interface Post {
-	_type: 'post';
+export interface Article {
+	_type: 'article';
 	_createdAt: string;
 	title: string;
+    description: string;
 	slug: Slug;
     author: Author;
-	excerpt?: string;
 	mainImage: ImageAsset;
-    imageCourtesy?: string;
-    categories: Category[];
+    category: Category;
+    subcategory: Category;
     publishedAt: string;
 	body: PortableTextBlock[];
+    comments?: Comment[];
 }
 
 export interface Author {
@@ -27,6 +28,13 @@ export interface Category {
     _type: 'category';
     title: string;
     slug: Slug;
+    subcategories?: Subcategory[];
+}
+
+export interface Subcategory {
+    _type: 'subcategory';
+    title: string;
+    slug: Slug;
 }
 
 export interface Comment {
@@ -36,5 +44,4 @@ export interface Comment {
     approved: boolean;
     email: string;
     comment: string;
-    post: Post;
 }

@@ -14,36 +14,35 @@ export default defineType({
       name: 'approved',
       title: 'Approved',
       type: 'boolean',
+      initialValue: false,
       description: "Comments won't show on the site without approval",
     }),
     defineField({
       name: 'email',
       title: 'Email',
       type: 'string',
+      validation: (Rule) =>
+        Rule.email()
+          .required()
+          .regex(/@vsu\.edu\.ph$/),
     }),
     defineField({
       name: 'comment',
       title: 'Comment',
       type: 'text',
     }),
-    defineField({
-      name: 'post',
-      title: 'Post',
-      type: 'reference',
-      to: [{type: 'post'}],
-    }),
   ],
   preview: {
     select: {
       title: 'name',
       comment: 'comment',
-      post: 'post.title',
+      article: 'article.title',
     },
-    prepare({title, comment, post}) {
+    prepare({title, comment, article}) {
       return {
         title,
         subtitle: `${comment.substring(0, 50)}...`,
-        description: post,
+        description: article,
       }
     },
   },
