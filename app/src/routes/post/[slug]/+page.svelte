@@ -72,7 +72,7 @@
 			</div>
 			<div class="col-span-1 lg:block">
 				<div class="sticky top-4">
-					<h2 class="ml-11 text-primary">Most Read</h2>
+					<h2 class="ml-8 text-primary">Most Read</h2>
 					<ol class="mt-6 space-y-4">
 						{#each { length: 5 } as _, i}
 							<li class="flex flex-row justify-center">
@@ -81,7 +81,7 @@
 								>
 									{i + 1}
 								</div>
-								<div class="ml-6 flex w-full items-start border-b pb-4">
+								<div class="ml-3 flex w-full items-start border-b pb-4">
 									<a
 										href="/post/hello-world"
 										class="relative order-2 block aspect-video w-full basis-1/3 items-center overflow-hidden"
@@ -93,17 +93,20 @@
 											style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 										/></a
 									>
-									<div class="grow-1 w-full basis-2/3">
+									<div class="grow-1 w-full basis-2/3 pr-6">
 										<div class="block space-y-2">
 											<h2>
 												<a
 													href="/post/hello-world"
-													class="font-helvetica-neue text-xl font-black leading-tight text-foreground hover:text-accent-foreground"
+													class=" text-lg font-bold leading-tight text-foreground hover:text-accent-foreground"
 													data-sveltekit-preload-data="hover">Hello World</a
 												>
 											</h2>
+											<h6 class="line-clamp-2 font-arial text-xs">This is a test</h6>
 											<p class="flex items-center space-x-2 text-xs">
-												<a href="/" class="text-primary hover:text-foreground">Super User</a>
+												<a href="/" class="font-bold text-primary hover:text-foreground"
+													>Super user</a
+												>
 												<span>Dec 24</span><span>|</span>
 												<span class="flex items-center"
 													><MessageSquareIcon class="mr-1" size="12" /> 3</span

@@ -30,7 +30,7 @@
 				<h2>
 					<a
 						href="/post/{post.slug}"
-						class=" text-lg font-bold leading-tight text-foreground hover:text-accent-foreground"
+						class=" text-lg font-bold leading-tight text-foreground hover:underline"
 						data-sveltekit-preload-data="hover">{post.title}</a
 					>
 				</h2>
@@ -38,7 +38,9 @@
 					{post.excerpt}
 				</h6>
 				<p class="flex items-center space-x-2 text-xs">
-					<a href="/" class="font-bold text-primary hover:text-foreground">{post.author?.name}</a>
+					<a href="/" class="hover:text-darker-primary font-bold text-primary"
+						>{post.author?.name}</a
+					>
 					<span>{formatDate(post.publishedAt)}</span><span>|</span>
 					<span class="flex items-center"><MessageSquareIcon class="mr-1" size="12" /> 3</span>
 				</p>
@@ -53,7 +55,7 @@
 			<div class="h-16 w-full border-l-4 border-r-4 border-t-4 border-primary"></div>
 		</div>
 		<div class="relative flex justify-center">
-			<span class="bg-background p-4 text-2xl font-bold uppercase italic"> Top Stories </span>
+			<span class="bg-background p-4 text-2xl uppercase italic"> Top Stories </span>
 		</div>
 
 		<div class="relative flex flex-wrap px-4">
@@ -90,7 +92,7 @@
 							<h2>
 								<a
 									href="/post/{posts[0].slug}"
-									class=" text-4xl font-bold text-foreground hover:text-accent-foreground"
+									class=" text-4xl font-bold text-foreground hover:underline"
 									data-sveltekit-preload-data="hover">{posts[0].title}</a
 								>
 							</h2>
@@ -98,7 +100,7 @@
 								{posts[0].excerpt}
 							</h6>
 							<p class="flex items-center justify-center space-x-2 text-base font-medium italic">
-								<a href="/" class=" font-bold text-primary hover:text-foreground"
+								<a href="/" class=" hover:text-darker-primary font-bold text-primary"
 									>{posts[0].author?.name}</a
 								>
 								<span>{formatDate(posts[0].publishedAt ?? '')}</span>
@@ -123,7 +125,7 @@
 							<h2>
 								<a
 									href="/post/{posts[4].slug}"
-									class=" text-lg font-bold leading-tight text-foreground hover:text-accent-foreground"
+									class=" text-lg font-bold leading-tight text-foreground hover:underline"
 									data-sveltekit-preload-data="hover">{posts[4].title}</a
 								>
 							</h2>
@@ -131,7 +133,7 @@
 								{posts[4].excerpt}
 							</h6>
 							<p class="flex items-center space-x-2 text-xs">
-								<a href="/" class="font-bold text-primary hover:text-foreground"
+								<a href="/" class="hover:text-darker-primary font-bold text-primary"
 									>{posts[4].author?.name}</a
 								>
 								<span>{formatDate(posts[4].publishedAt ?? '')}</span><span>|</span>
