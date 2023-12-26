@@ -3,7 +3,7 @@
 	import logo from '$lib/images/amaranth_logo.png';
 </script>
 
-<footer class="mt-8 bg-primary" aria-labelledby="footer-heading">
+<footer class="bg-primary" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
 	<div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-12">
 		<div class="lg:grid lg:grid-cols-3 lg:gap-8">
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-12 border-t border-white px-6 pt-8">
+		<div class="mt-12 border-t border-white pt-8">
 			<p class="text-xs text-white lg:text-right">&copy; 2023 VSU Amaranth. All rights reserved.</p>
 		</div>
 	</div>

@@ -6,7 +6,7 @@ export interface Post {
 	_createdAt: string;
 	title: string;
 	slug: Slug;
-    author?: Author;
+    author: Author;
 	excerpt?: string;
 	mainImage: ImageAsset;
     imageCourtesy?: string;

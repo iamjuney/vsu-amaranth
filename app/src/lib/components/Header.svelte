@@ -55,31 +55,29 @@
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
 		<Command.Group heading="Suggestions">
-			<Command.Item>National</Command.Item>
-			<Command.Item>Campus News</Command.Item>
-			<Command.Item>Editorial</Command.Item>
+			<Command.Item>Calendar</Command.Item>
+			<Command.Item>Search Emoji</Command.Item>
+			<Command.Item>Calculator</Command.Item>
 		</Command.Group>
 	</Command.List>
 </Command.Dialog>
 
-<header class="bg-[#f1f3f2]">
+<header class="sticky top-0 z-10 bg-white/60 shadow-sm backdrop-blur">
 	<nav class="mx-auto max-w-6xl" aria-label="Top">
 		<div
 			class="flex w-full items-center justify-between border-b border-white bg-primary px-4 py-4 sm:px-6 md:bg-transparent lg:border-none lg:px-8"
 		>
-			<div class="flex items-center">
-				<div class="z-10 flex-grow-0 basis-auto rounded-b bg-primary md:-mb-8 md:-mt-6">
-					<a href="/" class="" data-sveltekit-preload-data>
-						<span class="sr-only">Amaranth</span>
-						<img class="h-10 w-auto md:h-20" src={logo} alt="" />
-					</a>
-				</div>
+			<div class="relative flex items-center">
+				<a href="/" class="bg-darker-primary absolute top-0 z-20" data-sveltekit-preload-data>
+					<span class="sr-only">Amaranth</span>
+					<img class="h-10 w-auto md:h-16" src={logo} alt="Amaranth Logo" />
+				</a>
 
-				<div class="ml-10 hidden space-x-6 uppercase lg:block">
+				<div class="relative ml-56 hidden space-x-6 uppercase lg:block">
 					{#each links as link}
 						<a
 							href={link.href}
-							class="text-xs font-black text-foreground hover:text-accent-foreground"
+							class="text-xs font-bold text-foreground hover:text-accent-foreground"
 							aria-current={link.current}
 						>
 							{link.name}
@@ -89,12 +87,12 @@
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger
 							><span
-								class="flex text-xs font-black uppercase text-foreground hover:text-accent-foreground"
+								class="flex text-xs font-bold uppercase text-foreground hover:text-accent-foreground"
 								>More <ChevronDown size="12" class="ml-1" /></span
 							></DropdownMenu.Trigger
 						>
 						<DropdownMenu.Content>
-							<DropdownMenu.Group class="uppercase ">
+							<DropdownMenu.Group class="uppercase">
 								<DropdownMenu.Item>Technology</DropdownMenu.Item>
 								<DropdownMenu.Item>Literary</DropdownMenu.Item>
 								<DropdownMenu.Item>Investigative</DropdownMenu.Item>
@@ -113,7 +111,7 @@
 			</div>
 		</div>
 		<div
-			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 font-black uppercase sm:px-6 lg:hidden lg:px-8"
+			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 font-bold uppercase sm:px-6 lg:hidden lg:px-8"
 		>
 			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> National </a>
 			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> Campus </a>

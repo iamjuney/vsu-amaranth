@@ -4,14 +4,16 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 180 2% 30%;
+    --background: 0 0% 93%;
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 142.1 76.2% 36.3%;
+    --primary: 122 96% 32%;
     --primary-foreground: 355.7 100% 97.3%;
+    --darker-primary: 122 96% 27%;
+    --darker-primary-foreground: 0 0% 95%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
@@ -22,8 +24,8 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
-    --radius: 0.5rem;
+    --ring: 122 96% 32%;
+    --radius: 0rem;
   }
   .dark {
     --background: 20 14.3% 4.1%;
@@ -34,6 +36,8 @@
     --popover-foreground: 0 0% 95%;
     --primary: 142.1 70.6% 45.3%;
     --primary-foreground: 144.9 80.4% 10%;
+    --darker-primary: 142.1 70.6% 40.3%;
+    --darker-primary-foreground: 240 10% 3.9%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
@@ -49,11 +53,57 @@
 }
  
 @layer base {
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('./lib/fonts/HelveticaNeue-Thin.woff2') format('woff2'),
+            url('./lib/fonts/HelveticaNeue-Thin.woff') format('woff');
+        font-weight: 100;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('./lib/fonts/HelveticaNeue-Light.woff2') format('woff2'),
+            url('./lib/fonts/HelveticaNeue-Light.woff') format('woff');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('./lib/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+            url('./lib/fonts/HelveticaNeue-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('./lib/fonts/HelveticaNeue.woff2') format('woff2'),
+            url('./lib/fonts/HelveticaNeue.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('./lib/fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+            url('./lib/fonts/HelveticaNeue-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
