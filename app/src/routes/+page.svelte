@@ -26,27 +26,15 @@
 						alt="Wes Davis"
 					/>
 					<div class="ml-2">
-						<p class="text-sm font-semibold">Wes Davis</p>
+						<p class="text-sm font-semibold">Super User</p>
 						<p class="text-xs text-gray-500">Dec 24</p>
 					</div>
 					<Share2Icon size="16" class="ml-auto text-gray-500" />
 				</div>
-				<h2 class="mb-2 text-xl font-bold">
-					What do Houston, Nashville, and Dallas have in common?
-				</h2>
-				<p class="mb-4 text-gray-700">
-					It’s not just that you’re more likely to come across cowboy boots in those places. They’re
-					also increasingly home to technology workers as demand for their skills comes from more
-					companies in more industries in more cities.
-				</p>
-				<p class="mb-4 italic text-gray-700">
-					The Wall Street Journal hits that and other factors leading to the shrinkage — both in
-					percentage and absolute figures — of the tech workforce in former strongholds of the
-					industry like the Bay Area and New York City.
-				</p>
-				<a class="text-blue-600 hover:underline" href="/"
-					>Tech Hubs Are Losing the Talent War to Everywhere Else [WSJ]</a
-				>
+				<h2 class="mb-2 text-xl font-bold">Hello world</h2>
+				<p class="mb-4 text-gray-700">This is a test.</p>
+				<p class="mb-4 italic text-gray-700">This is a test.</p>
+				<a class="text-blue-600 hover:underline" href="/post/hello-world">Hello World</a>
 			</article>
 			<hr class="mb-6 border-t border-gray-300" />
 		</div>
@@ -55,10 +43,10 @@
 				<div class="space-y-3 rounded-lg bg-white p-6 text-foreground shadow-sm">
 					<div class="flex items-center justify-between">
 						<h4 class="font-semibold">National News</h4>
-						<a class="text-foreground underline" href="/">See all National</a>
+						<a class="text-foreground underline" href="/">See all</a>
 					</div>
 					<h2 class="mb-4 ml-12 border-l-2 pl-2 text-4xl font-bold">
-						Google's ChatGPT competitor Bard is nearly as good – just slower
+						<a href="/post/hello-world">Hello World</a>
 					</h2>
 					<div class="mb-2 flex items-center">
 						<img
@@ -67,8 +55,8 @@
 							alt="Emilia David"
 						/>
 						<div class="ml-2">
-							<p class="text-sm font-semibold">Emilia David</p>
-							<p class="text-xs">Dec 22</p>
+							<p class="text-sm font-semibold">Super User</p>
+							<p class="text-xs">Dec 24</p>
 						</div>
 						<Share2Icon size="24" class="ml-auto text-foreground" />
 					</div>
@@ -80,15 +68,16 @@
 						height="200"
 						style="aspect-ratio: 300 / 200; object-fit: cover;"
 					/>
-					<div class="px-6 py-8">
+					<div class="p-6">
 						<ul class="space-y-8">
 							<li class="flex flex-row">
 								<div
-									class="flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-background text-xs text-foreground"
+									class="flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs text-foreground"
 								></div>
-								<div class="-mt-2 ml-2 space-y-2">
-									<a class="block text-lg font-semibold leading-tight hover:underline" href="/"
-										>The hyperloop is dead for real this time</a
+								<div class="-mt-2 ml-4 space-y-2">
+									<a
+										class="block text-lg font-semibold leading-tight hover:underline"
+										href="/post/hello-world">Hello World</a
 									>
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>
@@ -101,11 +90,12 @@
 							</li>
 							<li class="flex flex-row">
 								<div
-									class="flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-background text-xs text-foreground"
+									class="flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs text-foreground"
 								></div>
-								<div class="-mt-2 ml-2 space-y-2">
-									<a class="block text-lg font-semibold leading-tight hover:underline" href="/"
-										>Here are over 40 last-minute gifts you can still nab before Christmas</a
+								<div class="-mt-2 ml-4 space-y-2">
+									<a
+										class="block text-lg font-semibold leading-tight hover:underline"
+										href="/post/hello-world">Hello World</a
 									>
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>

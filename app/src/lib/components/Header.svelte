@@ -68,7 +68,7 @@
 			class="flex w-full items-center justify-between border-b border-white bg-primary px-4 py-4 sm:px-6 md:bg-transparent lg:border-none lg:px-8"
 		>
 			<div class="relative flex items-center">
-				<a href="/" class="bg-darker-primary absolute top-0 z-20" data-sveltekit-preload-data>
+				<a href="/" class="absolute top-0 z-20 bg-darker-primary" data-sveltekit-preload-data>
 					<span class="sr-only">Amaranth</span>
 					<img class="h-10 w-auto md:h-16" src={logo} alt="Amaranth Logo" />
 				</a>
