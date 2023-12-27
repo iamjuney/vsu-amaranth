@@ -1,6 +1,4 @@
 import { createClient } from '@sanity/client';
-import groq from 'groq';
-import type { Article } from '../../types';
 
 import { PUBLIC_SANITY_DATASET, PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
 
@@ -14,39 +12,3 @@ export const client = createClient({
 	useCdn: false, // `false` if you want to ensure fresh data
 	apiVersion: '2023-03-20' // date of setup
 });
-
-export async function getArticles(): Promise<Article[]> {
-	return await client.fetch(
-		groq`*[_type == "article" && defined(slug.current)] | order(_createdAt desc) {
-            _type,
-            _createdAt,
-            title,
-            'slug': slug.current,
-            'author': author->{name, slug, image, bio},
-            excerpt,
-            mainImage,
-            imageCourtesy,
-            'categories': categories[]->{title, slug},
-            publishedAt,
-            body
-        }`
-	);
-}
-
-export async function getArticle(slug: string): Promise<Article> {
-	return await client.fetch(groq`*[_type == "article" && slug.current == $slug][0] {
-        _type,
-            _createdAt,
-            title,
-            slug,
-            'author': author->{name, slug, image, bio},
-            excerpt,
-            mainImage,
-            imageCourtesy,
-            'categories': categories[]->{title, slug},
-            publishedAt,
-            body
-    }`, {
-		slug
-	});
-}

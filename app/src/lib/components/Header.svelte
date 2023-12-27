@@ -4,35 +4,10 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import * as Command from '$lib/components/ui/command';
 	import logo from '$lib/images/amaranth_logo.png';
+	import type { HeaderLink } from '$lib/utils/types';
 
+	let { links } = $props<{ links: HeaderLink[] }>();
 	let open = $state(false);
-	const links = [
-		{
-			name: 'National',
-			href: '/national',
-			current: true
-		},
-		{
-			name: 'Campus',
-			href: '/campus',
-			current: false
-		},
-		{
-			name: 'Editorial',
-			href: '/editorial',
-			current: false
-		},
-		{
-			name: 'Sports',
-			href: '/sports',
-			current: false
-		},
-		{
-			name: 'Science',
-			href: '/science',
-			current: false
-		}
-	];
 
 	$effect(() => {
 		function handleKeydown(e: KeyboardEvent) {
@@ -50,37 +25,28 @@
 	});
 </script>
 
-<Command.Dialog bind:open>
-	<Command.Input placeholder="Type a command or search..." />
-	<Command.List>
-		<Command.Empty>No results found.</Command.Empty>
-		<Command.Group heading="Suggestions">
-			<Command.Item>Calendar</Command.Item>
-			<Command.Item>Search Emoji</Command.Item>
-			<Command.Item>Calculator</Command.Item>
-		</Command.Group>
-	</Command.List>
-</Command.Dialog>
-
 <header class="sticky top-0 z-10 bg-white/60 shadow-sm backdrop-blur">
 	<nav class="mx-auto max-w-6xl" aria-label="Top">
 		<div
-			class="flex w-full items-center justify-between border-b border-white bg-primary px-4 py-4 sm:px-6 md:bg-transparent lg:border-none lg:px-8"
+			class="flex w-full items-center justify-between border-b border-white bg-primary px-4 py-2 md:bg-transparent md:px-6 md:py-4 lg:border-none lg:px-8"
 		>
 			<div class="relative flex items-center">
-				<a href="/" class="absolute top-0 z-20 bg-darker-primary" data-sveltekit-preload-data>
+				<a
+					href="/"
+					class="z-20 md:absolute md:top-0 md:bg-darker-primary"
+					data-sveltekit-preload-data
+				>
 					<span class="sr-only">Amaranth</span>
-					<img class="h-10 w-auto md:h-16" src={logo} alt="Amaranth Logo" />
+					<img class="h-14 w-auto md:h-16" src={logo} alt="Amaranth Logo" />
 				</a>
 
-				<div class="relative ml-56 hidden space-x-6 uppercase lg:block">
-					{#each links as link}
+				<div class="relative ml-56 hidden space-x-6 uppercase md:block">
+					{#each links.slice(0, 4) as link}
 						<a
-							href={link.href}
+							href="/{link.slug}"
 							class="text-xs font-bold text-foreground hover:text-accent-foreground"
-							aria-current={link.current}
 						>
-							{link.name}
+							{link.title}
 						</a>
 					{/each}
 
@@ -93,11 +59,9 @@
 						>
 						<DropdownMenu.Content>
 							<DropdownMenu.Group class="uppercase">
-								<DropdownMenu.Item>Technology</DropdownMenu.Item>
-								<DropdownMenu.Item>Literary</DropdownMenu.Item>
-								<DropdownMenu.Item>Investigative</DropdownMenu.Item>
-								<DropdownMenu.Item>Blog</DropdownMenu.Item>
-								<DropdownMenu.Item>Bulletin</DropdownMenu.Item>
+								{#each links.slice(4) as link}
+									<DropdownMenu.Item href="/{link.slug}">{link.title}</DropdownMenu.Item>
+								{/each}
 							</DropdownMenu.Group>
 						</DropdownMenu.Content>
 					</DropdownMenu.Root>
@@ -108,14 +72,27 @@
 				<Button variant="ghost" size="icon" onclick={() => (open = !open)} class="bg-transparent"
 					><Search size="16" /></Button
 				>
+				<Command.Dialog bind:open>
+					<Command.Input placeholder="Type a command or search..." />
+					<Command.List>
+						<Command.Empty>No results found.</Command.Empty>
+						<Command.Group heading="Suggestions">
+							<Command.Item>Calendar</Command.Item>
+							<Command.Item>Search Emoji</Command.Item>
+							<Command.Item>Calculator</Command.Item>
+						</Command.Group>
+					</Command.List>
+				</Command.Dialog>
 			</div>
 		</div>
 		<div
-			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 font-bold uppercase sm:px-6 lg:hidden lg:px-8"
+			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 font-bold uppercase sm:px-6 md:hidden lg:px-8"
 		>
-			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> National </a>
-			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> Campus </a>
-			<a href="/" class="text-xs text-foreground hover:text-accent-foreground"> Editorial </a>
+			{#each links.slice(0, 3) as link}
+				<a href="/{link.slug}" class="text-xs text-foreground hover:text-accent-foreground">
+					{link.title}
+				</a>
+			{/each}
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger
 					><span class="flex text-xs uppercase text-foreground hover:text-accent-foreground"
@@ -124,12 +101,9 @@
 				>
 				<DropdownMenu.Content>
 					<DropdownMenu.Group class="uppercase">
-						<DropdownMenu.Item>Science</DropdownMenu.Item>
-						<DropdownMenu.Item>Technology</DropdownMenu.Item>
-						<DropdownMenu.Item>Literary</DropdownMenu.Item>
-						<DropdownMenu.Item>Investigative</DropdownMenu.Item>
-						<DropdownMenu.Item>Blog</DropdownMenu.Item>
-						<DropdownMenu.Item>Bulletin</DropdownMenu.Item>
+						{#each links.slice(3) as link}
+							<DropdownMenu.Item href="/{link.slug}">{link.title}</DropdownMenu.Item>
+						{/each}
 					</DropdownMenu.Group>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>

@@ -44,17 +44,6 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      fields: [
-        {
-          name: 'source',
-          type: 'string',
-          title: 'Alt text',
-          description: 'E.g. Photo by ...',
-          options: {
-            isHighlighted: true, // <-- make this field easily accessible
-          },
-        },
-      ],
     }),
     defineField({
       name: 'category',

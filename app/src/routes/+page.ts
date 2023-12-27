@@ -1,13 +1,23 @@
-import { getArticles } from '$lib/utils/sanity'
+import { client } from '$lib/utils/sanity'
 import { error } from '@sveltejs/kit'
 import type { PageLoad } from './$types'
+import type { Article } from '$lib/utils/types'
+import groq from 'groq';
 
 export const load = (async () => {
-	const articles = await getArticles()
+	const top_articles = await client.fetch(
+		groq`*[_type == "article"] | order(publishedAt desc)[0...8] {
+            ...,
+            'slug': slug.current,
+            'authors': authors[]->{name, 'slug': slug.current},
+            'category': category->{title, 'slug': slug.current},
+            'subcategory': subcategory->{title, 'slug': slug.current},
+        }`
+	) as Article[];
 
-	if (articles) {
+	if (top_articles) {
 		return {
-			articles
+			top_articles
 		}
 	}
 

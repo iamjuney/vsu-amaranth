@@ -1,23 +1,23 @@
 <script lang="ts">
-	import type { Post } from '../../types';
 	import { urlFor } from '$lib/utils/image';
 	import { formatDate } from '$lib/utils';
 	import { MessageSquareIcon } from 'lucide-svelte';
+	import type { Article } from '$lib/utils/types';
 
-	let { posts } = $props<{ posts: Post[] }>();
+	let { articles } = $props<{ articles: Article[] }>();
 </script>
 
-{#snippet story({ post, index })}
+{#snippet story({ article, index })}
 	<div class={index < 2 ? 'border-b border-foreground' : ''}>
 		{#if index === 0}
 			<div class="block w-full">
 				<a
-					href="/post/{post.slug}"
-					class="relative block aspect-video w-full overflow-hidden"
+					href="/article/{article.slug}"
+					class="relative block aspect-video w-full overflow-hidden bg-center"
 					data-sveltekit-preload-data="hover"
 					><img
-						src={urlFor(post.mainImage).url()}
-						alt={post.imageCourtesy}
+						src={urlFor(article.mainImage).url()}
+						alt=""
 						class="h-full w-full object-cover hover:scale-105"
 						style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 					/></a
@@ -26,24 +26,42 @@
 		{/if}
 
 		<div class="py-4">
-			<div class="block space-y-2">
+			<div class="flex flex-col space-y-2">
 				<h2>
 					<a
-						href="/post/{post.slug}"
+						href="/article/{article.slug}"
 						class=" text-lg font-bold leading-tight text-foreground hover:underline"
-						data-sveltekit-preload-data="hover">{post.title}</a
+						data-sveltekit-preload-data="hover">{article.title}</a
 					>
 				</h2>
 				<h6 class="line-clamp-3 font-arial text-xs">
-					{post.excerpt}
+					{article.description}
 				</h6>
-				<p class="flex items-center space-x-2 text-xs">
-					<a href="/" class="hover:text-darker-primary font-bold text-primary"
-						>{post.author?.name}</a
-					>
-					<span>{formatDate(post.publishedAt)}</span><span>|</span>
-					<span class="flex items-center"><MessageSquareIcon class="mr-1" size="12" /> 3</span>
-				</p>
+				<div class="leading-140 tracking-15 relative z-10 inline-block text-xs uppercase">
+					{#each article.authors as author, index}
+						<div class="inline-block">
+							<a
+								href="/author/{author.slug}"
+								class="font-bold text-primary hover:text-darker-primary"
+							>
+								{#if index > 0}
+									<span class="text-primary">and</span>
+								{/if}
+								{author.name}</a
+							>
+						</div>
+					{/each}
+					<div class="inline-block">
+						<time datetime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+						<span
+							><span class="mx-1">|</span>
+							<a class="group" href="/">
+								<MessageSquareIcon class="inline" size="12" />
+								<span class="group-hover:underline">26</span></a
+							></span
+						>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -60,8 +78,8 @@
 
 		<div class="relative flex flex-wrap px-4">
 			<div class="w-[22.5%] px-4">
-				{#each posts.slice(1, 4) as post, index}
-					{@render story({ post, index })}
+				{#each articles.slice(2, 5) as article, index}
+					{@render story({ article, index })}
 				{/each}
 			</div>
 
@@ -69,12 +87,12 @@
 				<div class="border-b border-foreground">
 					<div class="block w-full items-center">
 						<a
-							href="/post/{posts[0].slug}"
+							href="/article/{articles[0].slug}"
 							class="relative block aspect-video w-full overflow-hidden"
 							data-sveltekit-preload-data="hover"
 							><img
-								src={urlFor(posts[0].mainImage).url()}
-								alt={posts[0].imageCourtesy}
+								src={urlFor(articles[0].mainImage).url()}
+								alt=""
 								class="h-full w-full object-cover hover:scale-105"
 								style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 							/></a
@@ -82,40 +100,46 @@
 					</div>
 					<div class="py-6">
 						<div class="mb-1 flex items-center justify-center">
-							<a href="/" class="inline bg-primary">
-								<span class=" px-1 text-xs font-medium uppercase text-primary-foreground"
-									>{posts[0].categories[0]?.title}</span
+							<a href="/article/{articles[0].subcategory.slug}" class="inline bg-primary">
+								<span class="px-1 text-xs font-medium uppercase text-primary-foreground"
+									>{articles[0].subcategory.title}</span
 								>
 							</a>
 						</div>
 						<div class="block space-y-2 text-center">
 							<h2>
 								<a
-									href="/post/{posts[0].slug}"
+									href="/article/{articles[0].slug}"
 									class=" text-4xl font-bold text-foreground hover:underline"
-									data-sveltekit-preload-data="hover">{posts[0].title}</a
+									data-sveltekit-preload-data="hover">{articles[0].title}</a
 								>
 							</h2>
 							<h6 class="line-clamp-3 font-arial">
-								{posts[0].excerpt}
+								{articles[0].description}
 							</h6>
-							<p class="flex items-center justify-center space-x-2 text-base font-medium italic">
-								<a href="/" class=" hover:text-darker-primary font-bold text-primary"
-									>{posts[0].author?.name}</a
-								>
-								<span>{formatDate(posts[0].publishedAt ?? '')}</span>
+							<p class="flex items-center justify-center space-x-2 text-base uppercase italic">
+								{#each articles[0].authors as author, index}
+									{#if index > 0}
+										<span class="text-primary">and</span>
+									{/if}
+									<a
+										href="/author/{author.slug}"
+										class="font-bold text-primary hover:text-darker-primary">{author.name}</a
+									>
+								{/each}
+								<span>{formatDate(articles[0].publishedAt)}</span>
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="flex w-full items-start py-6">
 					<a
-						href="/post/{posts[4].slug}"
+						href="/article/{articles[1].slug}"
 						class="relative order-2 block aspect-video w-full basis-1/3 items-center overflow-hidden"
 						data-sveltekit-preload-data="hover"
 						><img
-							src={urlFor(posts[4].mainImage).url()}
-							alt={posts[4].imageCourtesy}
+							src={urlFor(articles[1].mainImage).url()}
+							alt=""
 							class="h-full w-full object-cover hover:scale-105"
 							style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 						/></a
@@ -124,30 +148,47 @@
 						<div class="block space-y-2">
 							<h2>
 								<a
-									href="/post/{posts[4].slug}"
+									href="/article/{articles[1].slug}"
 									class=" text-lg font-bold leading-tight text-foreground hover:underline"
-									data-sveltekit-preload-data="hover">{posts[4].title}</a
+									data-sveltekit-preload-data="hover">{articles[1].title}</a
 								>
 							</h2>
 							<h6 class="line-clamp-3 font-arial text-xs">
-								{posts[4].excerpt}
+								{articles[1].description}
 							</h6>
-							<p class="flex items-center space-x-2 text-xs">
-								<a href="/" class="hover:text-darker-primary font-bold text-primary"
-									>{posts[4].author?.name}</a
-								>
-								<span>{formatDate(posts[4].publishedAt ?? '')}</span><span>|</span>
-								<span class="flex items-center"><MessageSquareIcon class="mr-1" size="12" /> 3</span
-								>
-							</p>
+							<div class="leading-140 tracking-15 relative z-10 inline-block text-xs uppercase">
+								{#each articles[1].authors as author, index}
+									<div class="inline-block">
+										{#if index > 0}
+											<span class="text-primary">and</span>
+										{/if}
+										<a
+											href="/author/{author.slug}"
+											class="font-bold text-primary hover:text-darker-primary">{author.name}</a
+										>
+									</div>
+								{/each}
+								<div class="inline-block">
+									<time datetime={articles[1].publishedAt}
+										>{formatDate(articles[1].publishedAt)}</time
+									>
+									<span
+										><span class="mx-1">|</span>
+										<a class="group" href="/">
+											<MessageSquareIcon class="inline" size="12" />
+											<span class="group-hover:underline">26</span></a
+										></span
+									>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="w-[22.5%] px-4">
-				{#each posts.slice(5, 8) as post, index}
-					{@render story({ post, index })}
+				{#each articles.slice(5, 8) as article, index}
+					{@render story({ article, index })}
 				{/each}
 			</div>
 		</div>

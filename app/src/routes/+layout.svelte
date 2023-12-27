@@ -5,11 +5,11 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import NewsLetter from '$lib/components/NewsLetter.svelte';
 
-	let { children } = $props();
+	let { children, data } = $props();
 </script>
 
 <div class="relative h-full bg-background antialiased">
-	<Header />
+	<Header links={data.categories || []} />
 
 	<main class="relative mt-4 space-y-8">
 		{@render children()}
