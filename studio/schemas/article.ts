@@ -7,10 +7,10 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      description: 'A suitable title within 60 characters.',
+      description: 'The title of the article.',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().min(10).max(60),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
@@ -18,7 +18,7 @@ export default defineType({
       type: 'text',
       rows: 4,
       title: 'Description',
-      validation: (Rule) => Rule.required().min(100).max(350),
+      validation: (Rule) => Rule.required().max(350),
     }),
     defineField({
       name: 'slug',
@@ -31,11 +31,11 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
+      name: 'authors',
+      title: 'Authors',
+      type: 'array',
       validation: (Rule) => Rule.required(),
-      to: [{type: 'author'}],
+      of: [{type: 'reference', to: {type: 'author'}}],
     }),
     defineField({
       name: 'mainImage',
@@ -67,7 +67,6 @@ export default defineType({
       name: 'subcategory',
       title: 'Subcategory',
       type: 'reference',
-      validation: (Rule) => Rule.required(),
       to: {type: 'subcategory'},
     }),
     defineField({
@@ -97,12 +96,18 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      author0: 'authors.0.name',
+      author1: 'authors.1.name',
       media: 'mainImage',
     },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+    prepare({title, author0, author1}: any) {
+      const authors = [author0, author1].filter(Boolean).join(', ')
+      const subtitle = authors ? `by ${authors}` : ''
+      const hasTwoAuthors = Boolean(author1)
+      return {
+        title,
+        subtitle: hasTwoAuthors ? `${subtitle}…` : subtitle,
+      }
     },
   },
 })

@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client';
 import groq from 'groq';
-import type { Post } from '../../types';
+import type { Article } from '../../types';
 
 import { PUBLIC_SANITY_DATASET, PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
 
@@ -15,9 +15,9 @@ export const client = createClient({
 	apiVersion: '2023-03-20' // date of setup
 });
 
-export async function getPosts(): Promise<Post[]> {
+export async function getArticles(): Promise<Article[]> {
 	return await client.fetch(
-		groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc) {
+		groq`*[_type == "article" && defined(slug.current)] | order(_createdAt desc) {
             _type,
             _createdAt,
             title,
@@ -33,8 +33,8 @@ export async function getPosts(): Promise<Post[]> {
 	);
 }
 
-export async function getPost(slug: string): Promise<Post> {
-	return await client.fetch(groq`*[_type == "post" && slug.current == $slug][0] {
+export async function getArticle(slug: string): Promise<Article> {
+	return await client.fetch(groq`*[_type == "article" && slug.current == $slug][0] {
         _type,
             _createdAt,
             title,
@@ -50,5 +50,3 @@ export async function getPost(slug: string): Promise<Post> {
 		slug
 	});
 }
-
-

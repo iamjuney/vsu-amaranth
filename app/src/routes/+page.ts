@@ -1,13 +1,13 @@
-import { getPosts } from '$lib/utils/sanity'
+import { getArticles } from '$lib/utils/sanity'
 import { error } from '@sveltejs/kit'
 import type { PageLoad } from './$types'
 
 export const load = (async () => {
-	const posts = await getPosts()
+	const articles = await getArticles()
 
-	if (posts) {
+	if (articles) {
 		return {
-			posts
+			articles
 		}
 	}
 
