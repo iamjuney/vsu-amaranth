@@ -3,6 +3,7 @@
 	import { formatDate } from '$lib/utils';
 	import { MessageSquareIcon } from 'lucide-svelte';
 	import type { Article } from '$lib/utils/types';
+	import { smoothload } from '$lib/utils/actions';
 
 	let { articles } = $props<{ articles: Article[] }>();
 </script>
@@ -20,6 +21,7 @@
 						alt=""
 						class="h-full w-full object-cover hover:scale-105"
 						style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
+						use:smoothload
 					/></a
 				>
 			</div>
@@ -95,14 +97,15 @@
 								alt=""
 								class="h-full w-full object-cover hover:scale-105"
 								style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
+								use:smoothload
 							/></a
 						>
 					</div>
 					<div class="py-6">
 						<div class="mb-1 flex items-center justify-center">
-							<a href="/article/{articles[0].subcategory.slug}" class="inline bg-primary">
+							<a href="/article/{articles[0].category.slug}" class="inline bg-primary">
 								<span class="px-1 text-xs font-medium uppercase text-primary-foreground"
-									>{articles[0].subcategory.title}</span
+									>{articles[0].category.title}</span
 								>
 							</a>
 						</div>
@@ -142,6 +145,7 @@
 							alt=""
 							class="h-full w-full object-cover hover:scale-105"
 							style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
+							use:smoothload
 						/></a
 					>
 					<div class="grow-1 w-full basis-2/3 pr-6">

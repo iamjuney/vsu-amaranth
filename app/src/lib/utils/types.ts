@@ -11,7 +11,7 @@ export interface Article {
 	mainImage: ImageAsset;
     altText: string;
     category: Category;
-    subcategory: Subcategory;
+    subcategory?: Subcategory;
     publishedAt: string;
 	body: PortableTextBlock[];
     comments?: Comment[];
@@ -27,12 +27,14 @@ export interface Author {
 export interface Category {
     title: string;
     slug: Slug;
+    description?: string;
     subcategories?: Subcategory[];
 }
 
 export interface Subcategory {
     title: string;
     slug: Slug;
+    description?: string;
 }
 
 export interface Comment {

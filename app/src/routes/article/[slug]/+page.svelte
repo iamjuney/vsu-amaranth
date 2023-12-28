@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { smoothload } from '$lib/utils/actions';
 	import { PortableText } from '@portabletext/svelte';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
 	import Image from '$lib/components/Image.svelte';
-	import { FacebookIcon, TwitterIcon, MessageSquareIcon, LinkIcon } from 'lucide-svelte';
+	import { FacebookIcon, TwitterIcon, MessageSquareIcon, ShareIcon } from 'lucide-svelte';
 
 	let { data } = $props();
 
@@ -19,17 +20,22 @@
 					>{article.category.title}</span
 				>
 			</a>
-			<a href="/" class="inline bg-secondary px-1">
-				<span class="text-sm uppercase tracking-wide text-foreground"
-					>{article.subcategory.title}</span
-				>
-			</a>
-			<h1 class="font-helvetica-neue mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">
-				{article.title}
-			</h1>
-			<p class="mt-2 text-lg text-foreground">
-				{article.description}
-			</p>
+			{#if article.subcategory}
+				<a href="/" class="inline bg-secondary px-1">
+					<span class="text-sm uppercase tracking-wide text-foreground"
+						>{article.subcategory.title}</span
+					>
+				</a>
+			{/if}
+
+			<div class="border-l-4 border-primary pl-4">
+				<h1 class=" mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">
+					{article.title}
+				</h1>
+				<p class="mt-2 text-lg text-foreground">
+					{article.description}
+				</p>
+			</div>
 			<div class="mt-4 flex items-center space-x-2 text-sm text-foreground">
 				<span>By</span>
 				{#each article.authors as author, index}
@@ -46,13 +52,13 @@
 			</div>
 			<div class="mt-4 flex space-x-4">
 				<a href="/" class="block">
-					<FacebookIcon size="24" class="h-6 w-6 text-foreground" />
+					<FacebookIcon size="24" class="" />
 				</a>
 				<a href="/" class="block">
-					<TwitterIcon size="24" class="h-6 w-6 text-foreground" />
+					<TwitterIcon size="24" class="" />
 				</a>
 				<a href="/" class="block">
-					<LinkIcon size="24" class="h-6 w-6 text-foreground" />
+					<ShareIcon size="24" class="" />
 				</a>
 			</div>
 		</div>
@@ -60,7 +66,12 @@
 			<div class="col-span-2">
 				<div class="mt-6">
 					{#if article.mainImage}
-						<img src={urlFor(article.mainImage).url()} alt="" class="h-auto w-full" />
+						<img
+							src={urlFor(article.mainImage).url()}
+							alt=""
+							class="h-auto w-full"
+							use:smoothload
+						/>
 					{/if}
 					<p class="mt-2 text-sm text-foreground">
 						{article.mainImage.source}
@@ -79,7 +90,7 @@
 			</div>
 			<div class="col-span-1 lg:block">
 				<div class="sticky top-24">
-					<h2 class="ml-8 text-primary">Most Read</h2>
+					<h2 class="ml-8 text-lg text-primary">Most Read</h2>
 					<ol class="mt-6 space-y-4">
 						{#each most_popular as article, i}
 							<li class="flex flex-row justify-center">
@@ -88,11 +99,11 @@
 								>
 									{i + 1}
 								</div>
-								<div class="ml-3 flex w-full items-start border-b pb-4">
+								<div class="ml-3 flex w-full items-start border-b border-gray-300 pb-4">
 									<a
 										href="/article/{article.slug}"
 										class="relative order-2 block aspect-video w-full basis-1/3 items-center overflow-hidden"
-										data-sveltekit-preload-article="hover"
+										data-sveltekit-preload-data="hover"
 										><img
 											src={urlFor(article.mainImage).url()}
 											alt="Unsplash"
@@ -106,7 +117,7 @@
 												<a
 													href="/article/{article.slug}"
 													class=" text-lg font-bold leading-tight text-foreground hover:underline"
-													data-sveltekit-preload-article="hover">{article.title}</a
+													data-sveltekit-preload-data="hover">{article.title}</a
 												>
 											</h2>
 											<div

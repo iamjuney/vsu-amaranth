@@ -21,6 +21,12 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 4,
+    }),
+    defineField({
       name: 'subcategories',
       title: 'Subcategories',
       type: 'array',
