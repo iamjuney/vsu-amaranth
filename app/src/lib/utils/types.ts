@@ -6,7 +6,7 @@ export interface Article {
     _updatedAt: string;
 	title: string;
     description: string;
-	slug: Slug;
+	slug: string;
     authors: Author[];
 	mainImage: ImageAsset;
     altText: string;
@@ -26,14 +26,14 @@ export interface Author {
 
 export interface Category {
     title: string;
-    slug: Slug;
+    slug: string;
     description?: string;
     subcategories?: Subcategory[];
 }
 
 export interface Subcategory {
     title: string;
-    slug: Slug;
+    slug: string;
     description?: string;
 }
 
@@ -47,5 +47,5 @@ export interface Comment {
 
 export type HeaderLink = {
     title: string;
-    slug: Slug;
+    slug: string;
 };

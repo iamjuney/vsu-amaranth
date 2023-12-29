@@ -3,7 +3,7 @@
 	import { PortableText } from '@portabletext/svelte';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
-	import Image from '$lib/components/Image.svelte';
+	import Image from '$lib/components/PortableTextImage.svelte';
 	import { FacebookIcon, TwitterIcon, MessageSquareIcon, ShareIcon } from 'lucide-svelte';
 
 	let { data } = $props();
@@ -66,12 +66,7 @@
 			<div class="col-span-2">
 				<div class="mt-6">
 					{#if article.mainImage}
-						<img
-							src={urlFor(article.mainImage).url()}
-							alt=""
-							class="h-auto w-full"
-							use:smoothload
-						/>
+						<img src={urlFor(article.mainImage).url()} alt="" class="h-auto w-full" />
 					{/if}
 					<p class="mt-2 text-sm text-foreground">
 						{article.mainImage.source}
@@ -103,7 +98,7 @@
 									<a
 										href="/article/{article.slug}"
 										class="relative order-2 block aspect-video w-full basis-1/3 items-center overflow-hidden"
-										data-sveltekit-preload-data="hover"
+										data-sveltekit-preload-data
 										><img
 											src={urlFor(article.mainImage).url()}
 											alt="Unsplash"
@@ -117,7 +112,7 @@
 												<a
 													href="/article/{article.slug}"
 													class=" text-lg font-bold leading-tight text-foreground hover:underline"
-													data-sveltekit-preload-data="hover">{article.title}</a
+													data-sveltekit-preload-data>{article.title}</a
 												>
 											</h2>
 											<div

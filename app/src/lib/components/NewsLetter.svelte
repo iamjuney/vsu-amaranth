@@ -16,8 +16,13 @@
 			</div>
 			<div class="lg:mt-8lg: mt-12 sm:w-full lg:ml-8 lg:flex-1">
 				<form class="flex">
-					<label for="email-address" class="sr-only">Email address</label>
-					<Input class="mr-4 h-11 border-foreground" placeholder="Enter your email" />
+					<label for="email_address" class="sr-only">Email address</label>
+					<Input
+						name="email_address"
+						id="email_address"
+						class="mr-4 h-11 border-foreground"
+						placeholder="Enter your email"
+					/>
 					<Button size="lg">Notify Me</Button>
 				</form>
 				<p class="mt-3 text-sm">

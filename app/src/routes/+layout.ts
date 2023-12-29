@@ -4,16 +4,21 @@ import groq from 'groq';
 import type { HeaderLink } from "$lib/utils/types";
 
 export const load: LayoutLoad = async () => {
-    const categories = await client.fetch(
+    const header_links = await client.fetch(
         groq`*[_type == "category"] | order(_createdAt asc) {
             title,
             'slug': slug.current,
         }`
     ) as HeaderLink[];
 
-    if (categories) {
+    header_links.unshift({
+        title: 'Home',
+        slug: ''
+    });
+
+    if (header_links) {
         return {
-            categories
+            header_links
         }
     }
 };

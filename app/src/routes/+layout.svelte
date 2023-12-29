@@ -1,12 +1,13 @@
 <script lang="ts">
 	import '../app.pcss';
 
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import NewsLetter from '$lib/components/NewsLetter.svelte';
-	import 'nprogress/nprogress.css';
-	import NProgress from 'nprogress';
 	import { navigating } from '$app/stores';
+	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import NewsLetter from '$lib/components/NewsLetter.svelte';
+	import NProgress from 'nprogress';
+	import 'nprogress/nprogress.css';
+	import { onNavigate } from '$app/navigation';
 
 	NProgress.configure({
 		// Full list: https://github.com/rstacruz/nprogress#configuration
@@ -20,13 +21,24 @@
 		} else NProgress.done();
 	});
 
+	onNavigate((navigation) => {
+		if (!(document as any).startViewTransition) return;
+
+		return new Promise((resolve) => {
+			(document as any).startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
+
 	let { children, data } = $props();
 </script>
 
 <div
 	class="relative bg-background antialiased selection:bg-darker-primary selection:text-darker-primary-foreground"
 >
-	<Header links={data.categories || []} />
+	<Header header_links={data.header_links || []} />
 
 	<main class="relative mt-4 space-y-8">
 		{@render children()}
