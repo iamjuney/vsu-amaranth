@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { smoothload } from '$lib/utils/actions';
 	import { urlFor } from '$lib/utils/image';
 
 	let { data } = $props();

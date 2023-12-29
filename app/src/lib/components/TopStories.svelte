@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { urlFor } from '$lib/utils/image';
 	import { formatDate } from '$lib/utils';
-	import { MessageSquareIcon } from 'lucide-svelte';
+	import { urlFor } from '$lib/utils/image';
 	import type { Article } from '$lib/utils/types';
-	import { smoothload } from '$lib/utils/actions';
+	import { MessageSquareIcon } from 'lucide-svelte';
 
 	let { articles } = $props<{ articles: Article[] }>();
 </script>

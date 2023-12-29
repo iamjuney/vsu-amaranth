@@ -1,13 +1,13 @@
 <script lang="ts">
 	import '../app.pcss';
 
+	import { onNavigate } from '$app/navigation';
 	import { navigating } from '$app/stores';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import NewsLetter from '$lib/components/NewsLetter.svelte';
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
-	import { onNavigate } from '$app/navigation';
 
 	NProgress.configure({
 		// Full list: https://github.com/rstacruz/nprogress#configuration
@@ -22,10 +22,10 @@
 	});
 
 	onNavigate((navigation) => {
-		if (!(document as any).startViewTransition) return;
+		if (!document.startViewTransition) return;
 
 		return new Promise((resolve) => {
-			(document as any).startViewTransition(async () => {
+			document.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
 			});
@@ -40,7 +40,7 @@
 >
 	<Header header_links={data.header_links || []} />
 
-	<main class="relative mt-4 space-y-8">
+	<main class="relative mt-4 space-y-8 [view-transition-name:main]">
 		{@render children()}
 	</main>
 

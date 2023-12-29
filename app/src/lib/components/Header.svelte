@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import { Search, ChevronDown, SearchIcon } from 'lucide-svelte';
-	import logo from '$lib/images/amaranth_logo.png';
-	import type { HeaderLink } from '$lib/utils/types';
 	import { page } from '$app/stores';
+	import { Button } from '$lib/components/ui/button';
+	import type { HeaderLink } from '$lib/utils/types';
+	import { SearchIcon } from 'lucide-svelte';
 
 	let { header_links } = $props<{ header_links: HeaderLink[] }>();
 	let pathname = $derived($page.url.pathname);
@@ -149,11 +148,10 @@
 			<ul class="flex items-center justify-center space-x-8 border-b pb-4">
 				{#each header_links as link}
 					{#if pathname === `/${link.slug}`}
-						<li>
+						<li aria-current="page">
 							<a
 								class="border-b-4 border-primary pb-4 text-gray-700"
 								href="/{link.slug}"
-								aria-current="page"
 								data-sveltekit-preload-data
 								>{link.title}
 							</a>
@@ -175,7 +173,7 @@
 </header>
 
 <style>
-	a[aria-current='page']::before {
+	li[aria-current='page']::before {
 		view-transition-name: active-page;
 	}
 </style>

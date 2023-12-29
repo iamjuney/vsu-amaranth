@@ -1,7 +1,9 @@
-import type { LayoutLoad } from "./$types";
-import { client } from '$lib/utils/sanity'
-import groq from 'groq';
+import { client } from '$lib/utils/sanity';
 import type { HeaderLink } from "$lib/utils/types";
+import groq from 'groq';
+import type { LayoutLoad } from "./$types";
+
+export const prerender = true;
 
 export const load: LayoutLoad = async () => {
     const header_links = await client.fetch(

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import TopStories from '$lib/components/TopStories.svelte';
-	import { MessageSquareIcon, Share2Icon } from 'lucide-svelte';
 
 	let { data } = $props();
 </script>

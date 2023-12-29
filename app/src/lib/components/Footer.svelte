@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Facebook, Instagram, Twitter } from 'lucide-svelte';
 	import logo from '$lib/images/amaranth_logo.png';
+	import { Facebook, Instagram, Twitter } from 'lucide-svelte';
 </script>
 
 <footer class="bg-primary" aria-labelledby="footer-heading">

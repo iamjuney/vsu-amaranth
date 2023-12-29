@@ -1,8 +1,8 @@
-import { client } from '$lib/utils/sanity'
-import { error } from '@sveltejs/kit'
-import type { PageLoad } from './$types'
-import type { Article } from '$lib/utils/types'
+import { client } from '$lib/utils/sanity';
+import type { Article } from '$lib/utils/types';
+import { error } from '@sveltejs/kit';
 import groq from 'groq';
+import type { PageLoad } from './$types';
 
 export const load = (async () => {
 	const top_articles = await client.fetch(
