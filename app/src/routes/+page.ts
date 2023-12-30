@@ -15,9 +15,20 @@ export const load = (async () => {
         }`
 	) as Article[];
 
-	if (top_articles) {
+    const more_articles = await client.fetch(
+        groq`*[_type == "article"] | order(publishedAt desc)[8...16] {
+            ...,
+            'slug': slug.current,
+            'authors': authors[]->{name, 'slug': slug.current},
+            'category': category->{title, 'slug': slug.current},
+            'subcategory': subcategory->{title, 'slug': slug.current},
+        }`
+    ) as Article[];
+
+	if (top_articles && more_articles) {
 		return {
-			top_articles
+			top_articles,
+            more_articles
 		}
 	}
 

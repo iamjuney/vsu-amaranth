@@ -69,15 +69,8 @@
 
 <div class="container mx-auto max-w-6xl">
 	<div class="relative hidden md:flex md:flex-col">
-		<div>
-			<h1 class="relative inline-block overflow-hidden text-4xl font-medium">
-				Top Stories
-				<div class="absolute -bottom-1 z-10 h-4 w-full bg-primary/50"></div>
-			</h1>
-		</div>
-
-		<div class="relative mt-6 flex flex-wrap space-x-4">
-			<div class="w-[21%]">
+		<div class="relative flex flex-wrap">
+			<div class="w-[22.5%] pr-4">
 				{#each articles.slice(2, 5) as article, index}
 					{@render story({ article, index })}
 				{/each}
@@ -186,7 +179,7 @@
 				</div>
 			</div>
 
-			<div class="w-[21%]">
+			<div class="w-[22.5%] pl-4">
 				{#each articles.slice(5, 8) as article, index}
 					{@render story({ article, index })}
 				{/each}

@@ -3,7 +3,7 @@
 	import { Facebook, Instagram, Twitter } from 'lucide-svelte';
 </script>
 
-<footer class="bg-primary" aria-labelledby="footer-heading">
+<footer class="bg-darker-primary" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
 	<div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-12">
 		<div class="lg:grid lg:grid-cols-3 lg:gap-8">

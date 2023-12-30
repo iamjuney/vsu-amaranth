@@ -40,7 +40,7 @@
 >
 	<Header header_links={data.header_links || []} />
 
-	<main class="relative mt-4 space-y-8 [view-transition-name:main]">
+	<main class="relative mt-6 space-y-8">
 		{@render children()}
 	</main>
 

@@ -8,101 +8,6 @@
 	let pathname = $derived($page.url.pathname);
 </script>
 
-<!-- <header class="sticky top-0 z-40 bg-white/60 shadow-sm ">
-	<nav class="mx-auto max-w-6xl" aria-label="Top">
-		<div
-			class="flex w-full items-center justify-between border-b border-white bg-primary px-4 py-2 md:bg-transparent md:px-6 md:py-4 lg:border-none lg:px-8"
-		>
-			<div class="relative flex items-center">
-				<a
-					href="/"
-					class="z-50 md:absolute md:top-0 md:bg-darker-primary"
-					data-sveltekit-preload-data="hover"
-				>
-					<span class="sr-only">Amaranth</span>
-					<img class="h-14 w-auto md:h-16" src={logo} alt="Amaranth Logo" />
-				</a>
-
-				<div class="relative ml-56 hidden space-x-6 uppercase md:block">
-					{#each links.slice(0, 4) as link}
-						<a
-							href="/{link.slug}"
-							class="text-xs font-bold text-foreground hover:text-accent-foreground"
-							data-sveltekit-preload-data="hover"
-						>
-							{link.title}
-						</a>
-					{/each}
-
-					<DropdownMenu.Root>
-						<DropdownMenu.Trigger
-							><span
-								class="flex text-xs font-bold uppercase text-foreground hover:text-accent-foreground"
-								>More <ChevronDown size="12" class="ml-1" /></span
-							></DropdownMenu.Trigger
-						>
-						<DropdownMenu.Content>
-							<DropdownMenu.Group class="uppercase">
-								{#each links.slice(4) as link}
-									<DropdownMenu.Item href="/{link.slug}" data-sveltekit-preload-data="hover"
-										>{link.title}</DropdownMenu.Item
-									>
-								{/each}
-							</DropdownMenu.Group>
-						</DropdownMenu.Content>
-					</DropdownMenu.Root>
-				</div>
-			</div>
-			<div class="ml-10 flex space-x-2">
-				<Button class="text-xs">Subscribe</Button>
-				<Button variant="ghost" size="icon" onclick={() => (open = !open)} class="bg-transparent"
-					><Search size="16" /></Button
-				>
-				<Command.Dialog bind:open>
-					<Command.Input placeholder="Type a command or search..." />
-					<Command.List>
-						<Command.Empty>No results found.</Command.Empty>
-						<Command.Group heading="Suggestions">
-							<Command.Item>Calendar</Command.Item>
-							<Command.Item>Search Emoji</Command.Item>
-							<Command.Item>Calculator</Command.Item>
-						</Command.Group>
-					</Command.List>
-				</Command.Dialog>
-			</div>
-		</div>
-		<div
-			class="flex flex-wrap items-center justify-between space-x-6 px-4 py-4 font-bold uppercase sm:px-6 md:hidden lg:px-8"
-		>
-			{#each links.slice(0, 3) as link}
-				<a
-					href="/{link.slug}"
-					class="text-xs text-foreground hover:text-accent-foreground"
-					data-sveltekit-preload-data="hover"
-				>
-					{link.title}
-				</a>
-			{/each}
-			<DropdownMenu.Root>
-				<DropdownMenu.Trigger
-					><span class="flex text-xs uppercase text-foreground hover:text-accent-foreground"
-						>More <ChevronDown size="12" class="ml-1" /></span
-					></DropdownMenu.Trigger
-				>
-				<DropdownMenu.Content>
-					<DropdownMenu.Group class="uppercase">
-						{#each links.slice(3) as link}
-							<DropdownMenu.Item href="/{link.slug}" data-sveltekit-preload-data="hover"
-								>{link.title}</DropdownMenu.Item
-							>
-						{/each}
-					</DropdownMenu.Group>
-				</DropdownMenu.Content>
-			</DropdownMenu.Root>
-		</div>
-	</nav>
-</header> -->
-
 <header class="relative z-40 py-4 [view-transition-name:header]">
 	<div class="container mx-auto flex max-w-6xl items-center justify-between py-2">
 		<div class="flex items-center space-x-4">
@@ -116,7 +21,7 @@
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
-				class="text-gray-700"
+				class="text-234 18% 23%"
 				><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line
 					x1="4"
 					x2="20"
@@ -150,7 +55,7 @@
 					{#if pathname === `/${link.slug}`}
 						<li aria-current="page">
 							<a
-								class="border-b-4 border-primary pb-4 text-gray-700"
+								class="border-b-4 border-primary pb-4 text-foreground"
 								href="/{link.slug}"
 								data-sveltekit-preload-data
 								>{link.title}
@@ -159,7 +64,7 @@
 					{:else}
 						<li>
 							<a
-								class="text-gray-500 hover:text-gray-700"
+								class="text-gray-500 hover:text-foreground"
 								href="/{link.slug}"
 								data-sveltekit-preload-data
 								>{link.title}

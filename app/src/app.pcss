@@ -4,12 +4,12 @@
 
 @layer base {
     :root {
-        --background: 48 100% 99%;
-        --foreground: 0 0% 12%;
+        --background: 40 25% 95%;
+        --foreground: 234 18% 23%;
         --card: 0 0% 100%;
-        --card-foreground: 0 0% 12%;
+        --card-foreground: 234 18% 23%;
         --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 12%;
+        --popover-foreground: 234 18% 23%;
         --primary: 122 96% 32%;
         --primary-foreground: 355.7 100% 97.3%;
         --darker-primary: 122 96% 27%;
@@ -37,7 +37,7 @@
         --primary: 142.1 70.6% 45.3%;
         --primary-foreground: 144.9 80.4% 10%;
         --darker-primary: 142.1 70.6% 40.3%;
-        --darker-primary-foreground: 0 0% 12%;
+        --darker-primary-foreground: 234 18% 23%;
         --secondary: 240 3.7% 15.9%;
         --secondary-foreground: 0 0% 98%;
         --muted: 0 0% 15%;
@@ -122,20 +122,17 @@
 		}
 	}
 
-	/* @ts-ignore */
-	@media (prefers-reduced-motion: no-preference) {
-		:root::view-transition-old(root) {
-			animation:
-				90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-				300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
-		}
+    :root::view-transition-old(root) {
+        animation:
+            90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+    }
 
-		:root::view-transition-new(root) {
-			animation:
-				210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-				300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
-		}
-	}
+    :root::view-transition-new(root) {
+        animation:
+            210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+    }
 
     * {
         @apply border-border;
