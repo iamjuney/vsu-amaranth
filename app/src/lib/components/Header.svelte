@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { Button } from '$lib/components/ui/button';
 	import type { HeaderLink } from '$lib/utils/types';
-	import { SearchIcon } from 'lucide-svelte';
+	import { MenuIcon, SearchIcon } from 'lucide-svelte';
 
 	let { header_links } = $props<{ header_links: HeaderLink[] }>();
 	let pathname = $derived($page.url.pathname);
@@ -11,24 +11,7 @@
 <header class="relative z-40 py-4 [view-transition-name:header]">
 	<div class="container mx-auto flex max-w-6xl items-center justify-between py-2">
 		<div class="flex items-center space-x-4">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				class="text-234 18% 23%"
-				><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line
-					x1="4"
-					x2="20"
-					y1="18"
-					y2="18"
-				></line></svg
-			>
+			<MenuIcon size="24" />
 			<div class="relative flex items-center">
 				<form action="">
 					<input

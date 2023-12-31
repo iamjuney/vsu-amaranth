@@ -65,9 +65,9 @@
 						</h6>
 						<div>
 							<a
-								class="text-primary hover:text-darker-primary"
+								class="text-sm text-primary hover:text-darker-primary"
 								href="/article/{article.slug}"
-								data-sveltekit-preload-data>Read More</a
+								data-sveltekit-preload-data>Read More...</a
 							>
 						</div>
 					</article>
