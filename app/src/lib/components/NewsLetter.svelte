@@ -3,7 +3,7 @@
 	import { Input } from '$lib/components/ui/input';
 </script>
 
-<div class="relative mt-12 bg-[#f1f3f2]">
+<div class="relative mt-12 bg-white">
 	<div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-6xl lg:px-8">
 		<div class="py-10 sm:py-12 lg:flex lg:items-start lg:py-16">
 			<div class="lg:w-0 lg:flex-1">

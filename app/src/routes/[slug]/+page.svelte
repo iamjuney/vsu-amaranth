@@ -36,7 +36,9 @@
 			<div
 				class="absolute left-1/2 top-1/2 z-10 w-2/3 -translate-x-1/2 -translate-y-1/2 bg-background/90 px-16 py-8 text-center"
 			>
-				<div class="text-3xl font-extrabold tracking-tight group-hover:underline lg:text-4xl">
+				<div
+					class="text-3xl font-extrabold tracking-tight decoration-primary group-hover:underline lg:text-4xl"
+				>
 					{data.articles[0].title}
 				</div>
 				<h3 class="mt-6 italic">
@@ -59,7 +61,9 @@
 			<div
 				class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center text-darker-primary-foreground"
 			>
-				<div class="text-xl font-extrabold tracking-tight group-hover:underline lg:text-xl">
+				<div
+					class="text-xl font-extrabold tracking-tight decoration-primary group-hover:underline lg:text-xl"
+				>
 					{data.articles[1].title}
 				</div>
 				<h3 class="mt-2 italic">
@@ -83,7 +87,9 @@
 				class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center text-darker-primary-foreground"
 				role="button"
 			>
-				<div class="text-xl font-extrabold tracking-tight group-hover:underline lg:text-xl">
+				<div
+					class="text-xl font-extrabold tracking-tight decoration-primary group-hover:underline lg:text-xl"
+				>
 					{data.articles[2].title}
 				</div>
 				<h3 class="mt-2 italic">

@@ -24,7 +24,7 @@
 				<SearchIcon class="absolute right-2 top-2 text-gray-500" size="24" />
 			</div>
 		</div>
-		<div class="text-3xl font-bold tracking-tighter text-gray-800">.amaranth</div>
+		<a href="/" class="text-3xl font-bold tracking-tighter text-gray-800">.amaranth</a>
 		<div class="flex items-center space-x-2">
 			<Button class="inline-flex" variant="ghost">Author Login</Button>
 			<Button class="inline-flex">Subscribe Now</Button>
