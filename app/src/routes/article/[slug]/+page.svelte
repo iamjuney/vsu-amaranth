@@ -62,9 +62,9 @@
 				</a>
 			</div>
 		</div>
-		<div class="grid grid-cols-3 gap-8">
-			<div class="col-span-2">
-				<div class="mt-6">
+		<div class="mt-6 grid grid-cols-3 gap-8">
+			<div class="col-span-2 space-y-6">
+				<div class="">
 					{#if article.mainImage}
 						<img src={urlFor(article.mainImage).url()} alt="" class="h-auto w-full" />
 					{/if}
@@ -72,7 +72,9 @@
 						{article.mainImage.source}
 					</p>
 				</div>
-				<div class="prose prose-lg prose-indigo mt-6 max-w-full text-foreground">
+				<hr class="border-t border-foreground" />
+
+				<div class="prose prose-lg prose-indigo max-w-full text-foreground">
 					<PortableText
 						value={article.body}
 						components={{

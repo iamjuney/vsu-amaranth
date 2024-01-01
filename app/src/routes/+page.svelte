@@ -95,7 +95,7 @@
 			</div>
 
 			<div class="mt-6">
-				<Button class="w-full">Load More</Button>
+				<Button class="w-full">More Stories</Button>
 			</div>
 		</div>
 
@@ -103,8 +103,8 @@
 			<div class="sticky top-8">
 				<div class="space-y-3 rounded-lg border bg-white p-8 text-foreground shadow">
 					<div class="flex items-center justify-between">
-						<h4 class="font-semibold">Recent Announcements</h4>
-						<a class="text-foreground underline" href="/">See all</a>
+						<h4 class="text-lg text-primary">Recent Announcements</h4>
+						<a class="text-foreground hover:underline" href="/">See all</a>
 					</div>
 					<div class="border-l-2 border-primary pl-2">
 						<a
