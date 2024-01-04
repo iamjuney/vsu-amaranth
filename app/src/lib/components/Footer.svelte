@@ -1,6 +1,8 @@
 <script lang="ts">
 	import logo from '$lib/images/amaranth_logo.png';
 	import { Facebook, Instagram, Twitter } from 'lucide-svelte';
+
+	const year = new Date().getFullYear();
 </script>
 
 <footer class="mt-6 bg-darker-primary lg:mt-12" aria-labelledby="footer-heading">
@@ -49,13 +51,15 @@
 						Terms of use • Privacy Policy • <br />Cookie Policy • Advertise • Help • Feedback
 					</p>
 					<p class="pt-4 text-xs text-white">
-						<a href="https://vsu-amaranth.sanity.studio/">Author Login</a>
+						<a href="https://vsu-amaranth.sanity.studio/" target="_blank">Author Login</a>
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="mt-12 border-t border-white pt-8">
-			<p class="text-xs text-white lg:text-right">&copy; 2023 VSU Amaranth. All rights reserved.</p>
+			<p class="text-xs text-white lg:text-right">
+				&copy; {year} VSU Amaranth. All rights reserved.
+			</p>
 		</div>
 	</div>
 </footer>

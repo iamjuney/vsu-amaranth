@@ -27,8 +27,11 @@
 			</div>
 			<a href="/" class="text-3xl font-bold tracking-tighter text-gray-800">.amaranth</a>
 			<div class="flex items-center space-x-2">
-				<Button class="inline-flex" variant="ghost" href="https://vsu-amaranth.sanity.studio/"
-					>Author Login</Button
+				<Button
+					class="inline-flex"
+					variant="ghost"
+					href="https://vsu-amaranth.sanity.studio/"
+					target="_blank">Author Login</Button
 				>
 				<Button class="inline-flex">Subscribe Now</Button>
 			</div>
