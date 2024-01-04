@@ -1,4 +1,5 @@
 <script lang="ts">
+	import MessageSquare from '$lib/svg/MessageSquare.svelte';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
 	import type { Article } from '$lib/utils/types';
@@ -56,7 +57,7 @@
 						<span
 							><span class="mx-1">|</span>
 							<a class="group" href="/">
-								<MessageSquareIcon class="inline" size="12" />
+								<MessageSquare />
 								<span class="decoration-primary group-hover:underline">26</span></a
 							></span
 						>

@@ -20,7 +20,7 @@ export interface Article {
 export interface Author {
     name: string;
     slug: Slug;
-    image?: ImageAsset;
+    image: ImageAsset;
     bio?: string;
 }
 

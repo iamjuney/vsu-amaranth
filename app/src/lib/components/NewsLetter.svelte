@@ -4,8 +4,8 @@
 </script>
 
 <div class="relative mt-12 bg-white">
-	<div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-6xl lg:px-8">
-		<div class="py-10 sm:py-12 lg:flex lg:items-start lg:py-16">
+	<div class="container relative max-w-6xl py-6 lg:py-12">
+		<div class="lg:flex lg:items-start">
 			<div class="lg:w-0 lg:flex-1">
 				<h2 class="text-3xl font-extrabold tracking-tight text-foreground">
 					Be part of our awesome online community!
@@ -14,7 +14,7 @@
 					The latest news, articles, and resources, sent to your inbox weekly.
 				</p>
 			</div>
-			<div class="lg:mt-8lg: mt-12 sm:w-full lg:ml-8 lg:flex-1">
+			<div class="mt-8 sm:w-full lg:ml-8 lg:flex-1">
 				<form class="flex">
 					<label for="email_address" class="sr-only">Email address</label>
 					<Input

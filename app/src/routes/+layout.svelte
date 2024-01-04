@@ -44,7 +44,7 @@
 		{@render children()}
 	</main>
 
-	<NewsLetter />
+	<!-- <NewsLetter /> -->
 	<Footer />
 </div>
 
