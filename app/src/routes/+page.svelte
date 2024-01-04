@@ -100,7 +100,7 @@
 
 		<div class="mt-6 max-w-md md:flex-none">
 			<div class="md:sticky md:top-8">
-				<div class="space-y-3 rounded-lg border bg-card p-6 text-foreground shadow-sm">
+				<div class="space-y-3 border bg-card p-6 text-foreground shadow-sm">
 					<div class="flex items-center justify-between">
 						<h4 class="text-lg text-primary">Recent Announcements</h4>
 						<a class="text-foreground hover:underline" href="/">See all</a>
@@ -180,7 +180,7 @@
 				</div>
 
 				<div
-					class="mx-auto mt-6 max-w-md rounded-lg border bg-card text-card-foreground shadow-sm"
+					class="mx-auto mt-6 max-w-md border bg-card text-card-foreground shadow-sm"
 					data-v0-t="card"
 				>
 					<div class="flex flex-col space-y-1 p-6">
