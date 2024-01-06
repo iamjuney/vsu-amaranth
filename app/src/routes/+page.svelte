@@ -1,12 +1,11 @@
 <script lang="ts">
-	import MessageSquare from './../lib/svg/MessageSquare.svelte';
-	import NewsLetter from '$lib/components/NewsLetter.svelte';
 	import TopStories from '$lib/components/TopStories.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { Input } from '$lib/components/ui/input';
+	import { MessageSquare } from '$lib/svg';
 	import { urlFor } from '$lib/utils/image.js';
 	import { formatDate } from '$lib/utils/index.js';
-	import { MessageSquareIcon, Share2Icon } from 'lucide-svelte';
-	import { Input } from '$lib/components/ui/input';
+	import { Share2Icon } from 'lucide-svelte';
 
 	let { data } = $props();
 
@@ -108,7 +107,7 @@
 					<div class="border-l-2 border-primary pl-2">
 						<a
 							href="/article/{announcements[0].slug}"
-							class=" mt-3 text-4xl font-bold tracking-tight decoration-primary hover:underline"
+							class=" mt-3 text-2xl font-bold tracking-tight decoration-primary hover:underline"
 							>{announcements[0].title}</a
 						>
 						<p class="mt-2 text-foreground">
@@ -151,9 +150,7 @@
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>
 										<span>Dec 24</span><span>|</span>
-										<span class="flex items-center"
-											><MessageSquareIcon class="mr-1" size="12" /> 3</span
-										>
+										<span class="flex items-center"><MessageSquare /> 3</span>
 									</p>
 								</div>
 							</li>
@@ -169,9 +166,7 @@
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>
 										<span>Dec 24</span><span>|</span>
-										<span class="flex items-center"
-											><MessageSquareIcon class="mr-1" size="12" /> 3</span
-										>
+										<span class="flex items-center"><MessageSquare /> 3</span>
 									</p>
 								</div>
 							</li>

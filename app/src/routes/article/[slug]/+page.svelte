@@ -61,6 +61,7 @@
 			</a>
 		</div>
 	</div>
+
 	<div class="mt-6 flex flex-col md:flex-row md:gap-16">
 		<div class="grow space-y-6">
 			<div class="">
@@ -73,7 +74,7 @@
 			</div>
 			<hr class="border-t border-foreground" />
 
-			<div class="prose prose-lg prose-indigo max-w-full text-foreground">
+			<div class="prose prose-lg prose-indigo w-full overflow-x-hidden text-foreground">
 				<PortableText
 					value={article.body}
 					components={{
@@ -84,6 +85,7 @@
 				/>
 			</div>
 		</div>
+
 		<div class="mt-6 max-w-sm md:flex-none">
 			<div class="sticky top-24">
 				<h2 class="ml-8 text-lg text-primary">Most Read</h2>

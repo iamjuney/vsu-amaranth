@@ -5,7 +5,6 @@
 	import { navigating } from '$app/stores';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import NewsLetter from '$lib/components/NewsLetter.svelte';
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
 
@@ -44,7 +43,6 @@
 		{@render children()}
 	</main>
 
-	<!-- <NewsLetter /> -->
 	<Footer />
 </div>
 
