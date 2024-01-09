@@ -145,7 +145,7 @@
 								<div class="-mt-2 ml-4 space-y-2">
 									<a
 										class="block text-lg font-semibold leading-tight decoration-primary hover:underline"
-										href="/post/hello-world">New Course: AI for Business</a
+										href="">New Course: AI for Business</a
 									>
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>
@@ -161,7 +161,7 @@
 								<div class="-mt-2 ml-4 space-y-2">
 									<a
 										class="block text-lg font-semibold leading-tight decoration-primary hover:underline"
-										href="/post/hello-world">Library Hours Extended</a
+										href="">Library Hours Extended</a
 									>
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>
