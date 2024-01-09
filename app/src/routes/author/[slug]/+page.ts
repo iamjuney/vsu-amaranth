@@ -3,6 +3,8 @@ import { error } from '@sveltejs/kit';
 import groq from 'groq';
 import type { PageLoad } from './$types';
 
+export const prerender = true;
+
 export const load = (async ({params}) => {
     const author = await client.fetch(
         groq`*[_type == "author" && slug.current == "${params.slug}"][0] {

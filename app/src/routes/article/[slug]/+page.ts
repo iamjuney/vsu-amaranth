@@ -4,6 +4,8 @@ import type { PageLoad } from './$types'
 import type { Article } from '$lib/utils/types'
 import groq from 'groq';
 
+export const prerender = true;
+
 export const load = (async ({params}) => {
 	const article = await client.fetch(
 		groq`*[_type == "article" && slug.current == '${params.slug}'][0] {
