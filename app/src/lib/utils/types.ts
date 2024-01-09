@@ -18,6 +18,7 @@ export interface Article {
 }
 
 export interface Author {
+    _id: string;
     name: string;
     slug: Slug;
     image: ImageAsset;
