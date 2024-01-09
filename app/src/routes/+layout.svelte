@@ -5,6 +5,7 @@
 	import { navigating } from '$app/stores';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
+	import { ModeWatcher } from 'mode-watcher';
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
 
@@ -34,6 +35,7 @@
 	let { children, data } = $props();
 </script>
 
+<ModeWatcher />
 <div
 	class="relative bg-background antialiased selection:bg-darker-primary selection:text-darker-primary-foreground"
 >
