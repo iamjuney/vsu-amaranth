@@ -80,7 +80,7 @@
 		<div class="max-w-sm md:flex-none">
 			<div class="sticky top-8">
 				<div
-					class="flex flex-col items-center border-2 border-muted p-6 text-card-foreground"
+					class="flex flex-col items-center border-2 border-card p-6 text-card-foreground shadow-sm"
 					data-v0-t="card"
 				>
 					<h3 class="text-sm uppercase tracking-widest text-foreground">Share this on</h3>
