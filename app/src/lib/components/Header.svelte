@@ -49,7 +49,7 @@
 			</div>
 			<a
 				href="/"
-				class="text-3xl font-bold tracking-tighter text-foreground"
+				class="text-2xl font-bold tracking-tighter text-foreground"
 				data-sveltekit-preload-data>.amaranth</a
 			>
 			<div class="flex items-center space-x-2">
@@ -66,7 +66,7 @@
 			<MenuIcon size="24" />
 			<a
 				href="/"
-				class="text-3xl font-bold tracking-tighter text-foreground"
+				class="text-2xl font-bold tracking-tighter text-foreground"
 				data-sveltekit-preload-data>.amaranth</a
 			>
 			<SearchIcon size="24" />

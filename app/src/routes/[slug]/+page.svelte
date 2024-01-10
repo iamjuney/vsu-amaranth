@@ -9,9 +9,9 @@
 <div class="container mx-auto max-w-6xl">
 	<div class="flex flex-col space-y-6">
 		<div>
-			<h1 class="relative inline-block overflow-hidden text-4xl font-medium">
+			<div class="h-1 w-10 bg-primary/50"></div>
+			<h1 class="mt-2 inline-block text-2xl font-medium">
 				{data.category.title}
-				<div class="absolute -bottom-1 z-10 h-4 w-full bg-primary/50"></div>
 			</h1>
 		</div>
 		<h3 class="max-w-3xl text-lg">
@@ -37,9 +37,7 @@
 			<div
 				class="absolute left-1/2 top-1/2 z-10 w-4/5 -translate-x-1/2 -translate-y-1/2 bg-background/90 px-8 py-4 text-center md:w-2/3 md:px-16 md:py-8"
 			>
-				<div
-					class="text-xl font-extrabold tracking-tight decoration-primary group-hover:underline md:text-4xl"
-				>
+				<div class="text-xl font-extrabold tracking-tight group-hover:underline md:text-4xl">
 					{data.articles[0].title}
 				</div>
 				<h3 class="mt-6 line-clamp-3 italic">
@@ -62,9 +60,7 @@
 			<div
 				class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center text-darker-primary-foreground"
 			>
-				<div
-					class="text-xl font-extrabold tracking-tight decoration-primary group-hover:underline md:text-xl"
-				>
+				<div class="text-xl font-extrabold tracking-tight group-hover:underline md:text-xl">
 					{data.articles[1].title}
 				</div>
 				<h3 class="mt-2 italic">
@@ -88,9 +84,7 @@
 				class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center text-darker-primary-foreground"
 				role="button"
 			>
-				<div
-					class="text-xl font-extrabold tracking-tight decoration-primary group-hover:underline lg:text-xl"
-				>
+				<div class="text-xl font-extrabold tracking-tight group-hover:underline lg:text-xl">
 					{data.articles[2].title}
 				</div>
 				<h3 class="mt-2 italic">
@@ -115,9 +109,7 @@
 		<div
 			class="absolute left-1/2 top-1/2 z-10 w-4/5 -translate-x-1/2 -translate-y-1/2 bg-background/90 px-8 py-4 text-center md:w-2/3 md:px-16 md:py-8"
 		>
-			<div
-				class="text-xl font-extrabold tracking-tight decoration-primary group-hover:underline md:text-4xl"
-			>
+			<div class="text-xl font-extrabold tracking-tight group-hover:underline md:text-4xl">
 				{data.articles[0].title}
 			</div>
 			<h3 class="mt-6 line-clamp-3 italic">
@@ -171,7 +163,7 @@
 							<h2>
 								<a
 									href="/article/{article.slug}"
-									class=" text-lg font-bold leading-tight text-foreground decoration-primary hover:underline"
+									class=" text-lg font-bold leading-tight text-foreground hover:underline"
 									data-sveltekit-preload-data>{article.title}</a
 								>
 							</h2>

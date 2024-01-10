@@ -16,16 +16,13 @@
 
 <TopStories articles={top_articles} />
 
-<div class="container mx-auto max-w-6xl">
-	<hr class="border-t" />
-
+<div class="container max-w-6xl">
 	<div class="flex flex-col md:flex-row md:gap-16">
 		<div class="grow">
 			<div class="mt-6">
-				<h1 class="relative inline-block overflow-hidden text-xl font-medium md:text-4xl">
-					Latest Stories
-					<div class="absolute -bottom-1 z-10 h-4 w-full bg-primary/50"></div>
-				</h1>
+				<div class="h-1 w-10 bg-primary/50"></div>
+
+				<h1 class="mt-2 inline-block text-lg font-medium md:text-2xl">Latest Stories</h1>
 			</div>
 
 			<div class="mt-2 divide-y divide-foreground md:mt-6">

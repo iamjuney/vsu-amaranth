@@ -41,7 +41,7 @@
 >
 	<Header header_links={data.header_links || []} />
 
-	<main class="relative mt-6 space-y-8">
+	<main class="relative mt-6 space-y-6">
 		{@render children()}
 	</main>
 
