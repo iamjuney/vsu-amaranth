@@ -49,7 +49,7 @@
 			</div>
 			<a
 				href="/"
-				class="text-3xl font-bold tracking-tighter text-gray-800"
+				class="text-3xl font-bold tracking-tighter text-foreground"
 				data-sveltekit-preload-data>.amaranth</a
 			>
 			<div class="flex items-center space-x-2">
@@ -66,7 +66,7 @@
 			<MenuIcon size="24" />
 			<a
 				href="/"
-				class="text-3xl font-bold tracking-tighter text-gray-800"
+				class="text-3xl font-bold tracking-tighter text-foreground"
 				data-sveltekit-preload-data>.amaranth</a
 			>
 			<SearchIcon size="24" />
@@ -81,14 +81,14 @@
 				{#each header_links as link}
 					{#if pathname === `/${link.slug}`}
 						<li aria-current="page" class="snap-start snap-always border-b-4 border-primary pb-4">
-							<a class="text-foreground" href="/{link.slug}" data-sveltekit-preload-data>
+							<a class="text-darker-primary" href="/{link.slug}" data-sveltekit-preload-data>
 								{link.title}
 							</a>
 						</li>
 					{:else}
 						<li class="snap-start snap-always pb-4">
 							<a
-								class="text-gray-500 hover:text-foreground"
+								class="text-muted-foreground hover:text-foreground"
 								href="/{link.slug}"
 								data-sveltekit-preload-data
 								>{link.title}

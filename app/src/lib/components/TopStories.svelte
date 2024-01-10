@@ -31,7 +31,7 @@
 				<h2>
 					<a
 						href="/article/{article.slug}"
-						class=" text-lg font-bold leading-tight text-foreground decoration-primary hover:underline"
+						class=" text-lg font-bold leading-tight text-foreground hover:underline"
 						data-sveltekit-preload-data>{article.title}</a
 					>
 				</h2>
@@ -58,7 +58,7 @@
 							><span class="mx-1">|</span>
 							<a class="group" href="/">
 								<MessageSquare />
-								<span class="decoration-primary group-hover:underline">26</span></a
+								<span class=" group-hover:underline">26</span></a
 							></span
 						>
 					</div>
@@ -104,7 +104,7 @@
 							<h2>
 								<a
 									href="/article/{articles[0].slug}"
-									class="text-4xl font-bold text-foreground decoration-primary hover:underline"
+									class="text-4xl font-bold text-foreground hover:underline"
 									data-sveltekit-preload-data>{articles[0].title}</a
 								>
 							</h2>
@@ -143,7 +143,7 @@
 							<h2>
 								<a
 									href="/article/{articles[1].slug}"
-									class=" text-lg font-bold leading-tight text-foreground decoration-primary hover:underline"
+									class=" text-lg font-bold leading-tight text-foreground hover:underline"
 									data-sveltekit-preload-data>{articles[1].title}</a
 								>
 							</h2>
@@ -170,7 +170,7 @@
 										><span class="mx-1">|</span>
 										<a class="group" href="/">
 											<MessageSquareIcon class="inline" size="12" />
-											<span class="decoration-primary group-hover:underline">26</span></a
+											<span class=" group-hover:underline">26</span></a
 										></span
 									>
 								</div>
@@ -215,7 +215,7 @@
 					<h2>
 						<a
 							href="/article/{articles[0].slug}"
-							class="text-4xl font-bold text-foreground decoration-primary hover:underline"
+							class="text-4xl font-bold text-foreground hover:underline"
 							data-sveltekit-preload-data>{articles[0].title}</a
 						>
 					</h2>
@@ -281,7 +281,7 @@
 												><span class="mx-1">|</span>
 												<a class="group" href="/">
 													<MessageSquare />
-													<span class="decoration-primary group-hover:underline">26</span></a
+													<span class=" group-hover:underline">26</span></a
 												></span
 											>
 										</div>
@@ -290,7 +290,7 @@
 								<h2>
 									<a
 										href="/article/{article.slug}"
-										class=" text-lg font-bold leading-tight text-foreground decoration-primary hover:underline"
+										class=" text-lg font-bold leading-tight text-foreground hover:underline"
 										data-sveltekit-preload-data>{article.title}</a
 									>
 								</h2>
