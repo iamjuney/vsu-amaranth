@@ -3,10 +3,9 @@
 	import { Button } from '$lib/components/ui/button';
 	import type { HeaderLink } from '$lib/utils/types';
 	import { MenuIcon, SearchIcon } from 'lucide-svelte';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { Sun, Moon } from 'radix-icons-svelte';
+	import { Moon, Sun } from 'radix-icons-svelte';
 
-	import { setMode, resetMode } from 'mode-watcher';
+	import { toggleMode } from 'mode-watcher';
 
 	let { header_links } = $props<{ header_links: HeaderLink[] }>();
 	let pathname = $derived($page.url.pathname);
@@ -17,24 +16,15 @@
 		<div class="hidden items-center justify-between py-2 md:flex">
 			<div class="flex items-center space-x-4">
 				<!-- <MenuIcon size="24" /> -->
-				<DropdownMenu.Root>
-					<DropdownMenu.Trigger asChild let:builder>
-						<Button builders={[builder]} variant="outline" size="icon">
-							<Sun
-								class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-							/>
-							<Moon
-								class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-							/>
-							<span class="sr-only">Toggle theme</span>
-						</Button>
-					</DropdownMenu.Trigger>
-					<DropdownMenu.Content align="end">
-						<DropdownMenu.Item on:click={() => setMode('light')}>Light</DropdownMenu.Item>
-						<DropdownMenu.Item on:click={() => setMode('dark')}>Dark</DropdownMenu.Item>
-						<DropdownMenu.Item on:click={() => resetMode()}>System</DropdownMenu.Item>
-					</DropdownMenu.Content>
-				</DropdownMenu.Root>
+				<Button on:click={toggleMode} variant="outline" size="icon">
+					<Sun
+						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+					/>
+					<Moon
+						class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+					/>
+					<span class="sr-only">Toggle theme</span>
+				</Button>
 				<div class="relative flex items-center">
 					<form action="">
 						<input

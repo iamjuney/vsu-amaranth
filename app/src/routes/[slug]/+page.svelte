@@ -57,9 +57,7 @@
 				alt=""
 			/>
 			<div class="absolute h-full w-full bg-gradient-to-b from-transparent to-black"></div>
-			<div
-				class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center text-darker-primary-foreground"
-			>
+			<div class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center">
 				<div class="text-xl font-extrabold tracking-tight group-hover:underline md:text-xl">
 					{data.articles[1].title}
 				</div>
@@ -81,7 +79,7 @@
 			/>
 			<div class="absolute h-full w-full bg-gradient-to-b from-transparent to-black"></div>
 			<div
-				class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center text-darker-primary-foreground"
+				class="absolute bottom-0 left-1/2 z-10 max-w-md -translate-x-1/2 py-8 text-center"
 				role="button"
 			>
 				<div class="text-xl font-extrabold tracking-tight group-hover:underline lg:text-xl">
