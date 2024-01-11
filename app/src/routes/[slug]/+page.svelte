@@ -48,7 +48,7 @@
 
 		<a
 			href="/article/{data.articles[1].slug}"
-			class="group relative overflow-hidden bg-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 md:row-span-1"
+			class="group relative overflow-hidden bg-white text-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 md:row-span-1"
 		>
 			<img
 				src={urlFor(data.articles[1].mainImage).url()}
@@ -69,7 +69,7 @@
 
 		<a
 			href="/article/{data.articles[2].slug}"
-			class="group relative overflow-hidden bg-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 md:row-span-1"
+			class="group relative overflow-hidden bg-white text-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 md:row-span-1"
 		>
 			<img
 				src={urlFor(data.articles[2].mainImage).url()}

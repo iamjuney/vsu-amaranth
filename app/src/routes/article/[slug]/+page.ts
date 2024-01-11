@@ -19,12 +19,11 @@ export const load = (async ({params}) => {
 
     const most_popular = await client.fetch(
         groq`*[_type == "article" && slug.current != '${params.slug}'] | order(_createdAt desc) [0...5] {
-            title,
-            mainImage,
-            publishedAt,
+             ...,
             'slug': slug.current,
             'authors': authors[]->{name, 'slug': slug.current},
-            'comment': count(*[_type == "comment" && references(^._id)]),
+            'category': category->{title, 'slug': slug.current},
+            'subcategory': subcategory->{title, 'slug': slug.current},
         }`
     ) as Article[];
 

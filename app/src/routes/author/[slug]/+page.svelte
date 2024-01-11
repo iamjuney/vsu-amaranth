@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
 	import MessageSquare from '$lib/svg/MessageSquare.svelte';
 	import { urlFor } from '$lib/utils/image.js';
 	import { formatDate } from '$lib/utils/index.js';

@@ -1,11 +1,13 @@
 <script lang="ts">
+	import ArticleCard from './../../../lib/components/ArticleCard.svelte';
 	import Image from '$lib/components/PortableTextImage.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
 	import { PortableText } from '@portabletext/svelte';
-	import { FacebookIcon, MessageSquareIcon, ShareIcon, TwitterIcon } from 'lucide-svelte';
+	import { FacebookIcon, ShareIcon, TwitterIcon } from 'lucide-svelte';
+	import { MessageSquare } from '$lib/svg';
 	let { data } = $props();
 
 	let article = $derived(data.article);
@@ -48,7 +50,7 @@
 			<span>|</span>
 			<time datetime={article.publishedAt}>{formatDate(article.publishedAt, true, false)}</time>
 			<span>|</span>
-			<MessageSquareIcon class="mr-1" size="16" />
+			<MessageSquare />
 			<span class="flex items-center underline"> 3 comments</span>
 		</div>
 	</div>
@@ -65,7 +67,9 @@
 			</div>
 			<hr class="border-t border-foreground" />
 
-			<div class="prose prose-lg prose-indigo w-full overflow-x-hidden text-foreground">
+			<div
+				class="prose prose-lg prose-indigo w-full overflow-x-hidden text-foreground prose-strong:text-foreground"
+			>
 				<PortableText
 					value={article.body}
 					components={{
@@ -85,83 +89,28 @@
 				>
 					<h3 class="text-sm uppercase tracking-widest text-foreground">Share this on</h3>
 					<div class="flex space-x-4 py-6">
-						<a href="/" class="block rounded-full border border-primary p-4">
+						<a href="/" class="block rounded-full border-2 border-primary p-4">
 							<FacebookIcon size="16" class=" text-foreground" />
 						</a>
-						<a href="/" class="block rounded-full border border-primary p-4">
+						<a href="/" class="block rounded-full border-2 border-primary p-4">
 							<TwitterIcon size="16" class=" text-foreground" />
 						</a>
-						<a href="/" class="block rounded-full border border-primary p-4">
+						<a href="/" class="block rounded-full border-2 border-primary p-4">
 							<ShareIcon size="16" class=" text-foreground" />
 						</a>
 					</div>
 				</div>
 
-				<div class="mt-6">
-					<h2 class="ml-8 text-lg text-primary">Related Stories</h2>
-					<ol class="mt-6 space-y-4">
-						{#each most_popular as article, i}
-							<li class="flex flex-row justify-center">
-								<div
-									class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-[11px] text-foreground"
-								>
-									{i + 1}
-								</div>
-								<div class="ml-3 flex w-full items-start border-b border-gray-300 pb-4">
-									<a
-										href="/article/{article.slug}"
-										class="relative order-2 block aspect-video w-full basis-1/3 items-center overflow-hidden"
-										data-sveltekit-preload-data
-										><img
-											src={urlFor(article.mainImage).url()}
-											alt="Unsplash"
-											class="h-full w-full object-cover hover:scale-105"
-											style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
-										/></a
-									>
-									<div class="grow-1 w-full basis-2/3 pr-6">
-										<div class="block space-y-2">
-											<h2>
-												<a
-													href="/article/{article.slug}"
-													class=" text-lg font-bold leading-tight text-foreground hover:underline"
-													data-sveltekit-preload-data>{article.title}</a
-												>
-											</h2>
-											<div
-												class="leading-140 tracking-15 relative z-10 inline-block text-xs uppercase"
-											>
-												{#each article.authors as author, index}
-													<div class="inline-block">
-														{#if index > 0}
-															<span class="text-primary">and</span>
-														{/if}
-														<a
-															href="/author/{author.slug}"
-															class="font-bold text-primary hover:text-darker-primary"
-															>{author.name}</a
-														>
-													</div>
-												{/each}
-												<div class="inline-block">
-													<time datetime={article.publishedAt}
-														>{formatDate(article.publishedAt)}</time
-													>
-													<span
-														><span class="mx-1">|</span>
-														<a class="group" href="/">
-															<MessageSquareIcon class="inline" size="12" />
-															<span class="group-hover:underline">26</span></a
-														></span
-													>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
-						{/each}
-					</ol>
+				<div class="mt-12">
+					<div class="h-1 w-10 bg-primary/50"></div>
+
+					<h1 class="mt-2 inline-block text-lg font-medium md:text-2xl">Related Stories</h1>
+				</div>
+
+				<div class="mt-2 divide-y divide-foreground md:mt-6">
+					{#each most_popular as article}
+						<ArticleCard {article} />
+					{/each}
 				</div>
 			</div>
 		</div>
