@@ -4,18 +4,25 @@
 	import type { HeaderLink } from '$lib/utils/types';
 	import { MenuIcon, SearchIcon } from 'lucide-svelte';
 	import { Moon, Sun } from 'radix-icons-svelte';
-
+	import { goto } from '$app/navigation';
 	import { toggleMode } from 'mode-watcher';
+	import Input from './ui/input/input.svelte';
 
 	let { header_links } = $props<{ header_links: HeaderLink[] }>();
 	let pathname = $derived($page.url.pathname);
+
+	function onsubmit(event: Event) {
+		event.preventDefault();
+		const formData = new FormData(event.currentTarget as HTMLFormElement);
+		const search = formData.get('search') as string;
+		goto(`/search?q=${search}`);
+	}
 </script>
 
 <header class="relative py-4 [view-transition-name:header]">
 	<div class="container mx-auto max-w-6xl">
 		<div class="hidden items-center justify-between py-2 md:flex">
 			<div class="flex items-center space-x-4">
-				<!-- <MenuIcon size="24" /> -->
 				<Button on:click={toggleMode} variant="outline" size="icon">
 					<Sun
 						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
@@ -25,17 +32,12 @@
 					/>
 					<span class="sr-only">Toggle theme</span>
 				</Button>
-				<div class="relative flex items-center">
-					<form action="">
-						<input
-							class="flex h-10 w-full border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-							type="text"
-							name="search"
-							placeholder="Search"
-						/>
-					</form>
-					<SearchIcon class="absolute right-2 top-2 text-gray-500" size="24" />
-				</div>
+				<form {onsubmit} class="relative flex items-center">
+					<Input type="search" name="search" placeholder="Search" />
+					<button title="Search" class="search-btn"
+						><SearchIcon class="absolute right-2 top-2 text-gray-500" size="24" /></button
+					>
+				</form>
 			</div>
 			<a
 				href="/"
@@ -53,13 +55,19 @@
 			</div>
 		</div>
 		<div class="flex items-center justify-between md:hidden">
-			<MenuIcon size="24" />
 			<a
 				href="/"
 				class="text-2xl font-bold tracking-tighter text-foreground"
 				data-sveltekit-preload-data>.amaranth</a
 			>
-			<SearchIcon size="24" />
+			<div class="flex space-x-2">
+				<div class="relative flex items-center">
+					<form action="">
+						<Input type="text" name="search" placeholder="Search" />
+					</form>
+					<SearchIcon class="absolute right-2 top-2 text-gray-500" size="24" />
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -90,6 +98,21 @@
 		</nav>
 	</div>
 </header>
+
+<div class="fixed bottom-2 z-50 w-full md:hidden">
+	<div class="container mx-auto">
+		<div class="relative flex justify-center">
+			<div
+				class="relative flex max-w-fit flex-col border-8 border-primary/60 bg-darker-primary px-5 py-4"
+			>
+				<div class="relative flex items-center justify-center space-x-2">
+					<div class="font-medium text-darker-primary-foreground">home</div>
+					<MenuIcon class="text-darker-primary-foreground" size="24" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <style>
 	li[aria-current='page']::before {

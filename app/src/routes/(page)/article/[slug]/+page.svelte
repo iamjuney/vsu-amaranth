@@ -1,13 +1,11 @@
 <script lang="ts">
-	import ArticleCard from './../../../lib/components/ArticleCard.svelte';
+	import ArticleCard from '$lib/components/ArticleCard.svelte';
 	import Image from '$lib/components/PortableTextImage.svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
+	import { MessageSquare } from '$lib/svg';
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
 	import { PortableText } from '@portabletext/svelte';
 	import { FacebookIcon, ShareIcon, TwitterIcon } from 'lucide-svelte';
-	import { MessageSquare } from '$lib/svg';
 	let { data } = $props();
 
 	let article = $derived(data.article);

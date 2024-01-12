@@ -1,7 +1,7 @@
 import { client } from '$lib/utils/sanity';
 import { error } from '@sveltejs/kit';
 import groq from 'groq';
-import type { PageLoad } from './$types';
+import type { PageLoad } from './$lib/types';
 
 export const prerender = true;
 

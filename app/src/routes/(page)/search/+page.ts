@@ -6,12 +6,12 @@ import type { PageLoad } from './$types';
 
 export const prerender = true;
 
-export const load = (async ({params}) => {
+export const load = (async () => {
     const category = await client.fetch(
-        groq`*[_type == "category" && slug.current == "${params.slug}"][0]`
+        groq`*[_type == "category" && slug.current == "news"][0]`
     );
 
-	const articles = await client.fetch(
+	const results = await client.fetch(
         groq`*[_type == "article" && category._ref == "${category._id}"] | order(_createdAt desc) {
                 ...,
                 'slug': slug.current,
@@ -21,10 +21,9 @@ export const load = (async ({params}) => {
             }`
         ) as Article[];
 
-	if (category && articles) {
+	if (results) {
 		return {
-            category,
-			articles,
+			results,
 		}
 	}
 
