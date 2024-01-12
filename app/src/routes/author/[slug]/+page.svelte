@@ -10,7 +10,7 @@
 	let articles = $derived(data.author.articles) as Article[];
 </script>
 
-<div class="container mx-auto max-w-6xl">
+<div class="container max-w-6xl">
 	<div class="flex flex-col space-y-6">
 		<h4 class="text-lg uppercase text-primary">All Stories by:</h4>
 		<div>
