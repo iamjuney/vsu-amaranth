@@ -7,7 +7,7 @@
 	let { data } = $props();
 </script>
 
-<div class="container mx-auto max-w-6xl">
+<div class="container">
 	<div class="flex flex-col space-y-6">
 		<div>
 			<div class="h-1 w-10 bg-primary/50"></div>
@@ -93,7 +93,7 @@
 		</a>
 	</div>
 
-	<div class="container hidden max-w-6xl md:flex">
+	<div class="container hidden md:flex">
 		<div class="mt-2 max-w-3xl divide-y divide-foreground md:mt-6">
 			{#each data.articles.slice(3) as article}
 				<ArticleCard {article} />

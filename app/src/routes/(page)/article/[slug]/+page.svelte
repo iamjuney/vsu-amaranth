@@ -12,7 +12,7 @@
 	let most_popular = $derived(data.most_popular);
 </script>
 
-<article class="container mx-auto max-w-6xl">
+<article class="container">
 	<div class="flex flex-col items-center space-y-4 text-center">
 		<div class="h-1 w-10 bg-primary/50"></div>
 		<div>

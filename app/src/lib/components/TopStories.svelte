@@ -67,7 +67,7 @@
 	</div>
 {/snippet}
 
-<div class="container mx-auto max-w-6xl">
+<div class="container">
 	<div class="relative hidden md:flex md:flex-col">
 		<div class="relative flex flex-wrap">
 			<div class="w-[22.5%] pr-4">

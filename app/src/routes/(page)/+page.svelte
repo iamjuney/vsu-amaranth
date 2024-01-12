@@ -5,7 +5,6 @@
 	import { Input } from '$lib/components/ui/input';
 	import { MessageSquare } from '$lib/svg';
 	import { urlFor } from '$lib/utils/image.js';
-	import { formatDate } from '$lib/utils/index.js';
 	import { Share2Icon } from 'lucide-svelte';
 
 	let { data } = $props();
@@ -17,7 +16,7 @@
 
 <TopStories articles={top_articles} />
 
-<div class="container max-w-6xl">
+<div class="container">
 	<div class="flex flex-col md:flex-row md:gap-16">
 		<div class="grow">
 			<div class="mt-6">

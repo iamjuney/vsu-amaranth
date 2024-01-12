@@ -6,7 +6,7 @@
 
 <footer class="mt-6 lg:mt-12" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
-	<div class="container mx-auto max-w-6xl py-6 lg:py-12">
+	<div class="container py-6 lg:py-12">
 		<div class="h-1 w-full bg-primary/50"></div>
 		<div class="mt-8 lg:grid lg:grid-cols-3 lg:gap-8">
 			<div class="space-y-8 lg:col-span-1">

@@ -20,7 +20,7 @@
 </script>
 
 <header class="relative py-4 [view-transition-name:header]">
-	<div class="container mx-auto max-w-6xl">
+	<div class="container">
 		<div class="hidden items-center justify-between py-2 md:flex">
 			<div class="flex items-center space-x-4">
 				<Button on:click={toggleMode} variant="outline" size="icon">
@@ -71,7 +71,7 @@
 		</div>
 	</div>
 
-	<div class="container mx-auto mt-4 max-w-6xl">
+	<div class="containermt-4">
 		<nav aria-label="Main navigation">
 			<ul
 				class="no-scrollbar flex w-full snap-x snap-mandatory items-center space-x-8 overflow-x-scroll border-b md:justify-center"

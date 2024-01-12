@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div class="container max-w-6xl space-y-6">
+<div class="container space-y-6">
 	<div class="flex flex-col items-center">
 		<div class="h-1 w-10 bg-primary/50"></div>
 
