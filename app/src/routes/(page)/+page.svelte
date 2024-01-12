@@ -41,7 +41,7 @@
 			<div class="md:sticky md:top-8">
 				<div class="space-y-3 border-2 border-card p-6 text-foreground shadow-sm">
 					<div class="flex items-center justify-between">
-						<h4 class="text-lg text-primary">Recent Announcements</h4>
+						<h3 class="text-lg text-primary">Recent Announcements</h3>
 						<a class="text-foreground hover:underline" href="/">See all</a>
 					</div>
 					<div class="border-l-2 border-primary pl-2">
