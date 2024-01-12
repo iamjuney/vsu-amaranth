@@ -1,9 +1,7 @@
 import { client } from '$lib/utils/sanity';
 import { error } from '@sveltejs/kit';
 import groq from 'groq';
-import type { PageLoad } from './$lib/types';
-
-export const prerender = true;
+import type { PageLoad } from './$types';
 
 export const load = (async ({params}) => {
     const author = await client.fetch(

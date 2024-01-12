@@ -2,9 +2,7 @@ import { client } from '$lib/utils/sanity';
 import type { Article } from '$lib/utils/types';
 import { error } from '@sveltejs/kit';
 import groq from 'groq';
-import type { PageLoad } from '../$types';
-
-export const prerender = true;
+import type { PageLoad } from './$types';
 
 export const load = (async ({params}) => {
     const category = await client.fetch(

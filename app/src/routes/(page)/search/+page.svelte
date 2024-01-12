@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
 	import { client } from '$lib/utils/sanity';
 	import groq from 'groq';
 

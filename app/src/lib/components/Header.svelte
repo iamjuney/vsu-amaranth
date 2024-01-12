@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { Button } from '$lib/components/ui/button';
 	import type { HeaderLink } from '$lib/utils/types';
 	import { MenuIcon, SearchIcon } from 'lucide-svelte';
-	import { Moon, Sun } from 'radix-icons-svelte';
-	import { goto } from '$app/navigation';
 	import { toggleMode } from 'mode-watcher';
+	import { Moon, Sun } from 'radix-icons-svelte';
 	import Input from './ui/input/input.svelte';
 
 	let { header_links } = $props<{ header_links: HeaderLink[] }>();
