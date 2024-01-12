@@ -73,9 +73,9 @@
 									data-sveltekit-preload-data>{article.title}</a
 								>
 							</h2>
-							<h6 class="line-clamp-2 font-arial text-xs">
+							<h4 class="line-clamp-2 font-arial text-xs">
 								{article.description}
-							</h6>
+							</h4>
 							<div>
 								<a
 									class="text-sm font-medium text-primary hover:text-darker-primary"

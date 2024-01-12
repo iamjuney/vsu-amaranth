@@ -20,7 +20,7 @@ export const load = (async () => {
     ) as Promise<Article[]>;
 
     const fetchMoreArticles = client.fetch(
-        groq`*[_type == "article"] | order(publishedAt desc)[8...20] { ${content} }`
+        groq`*[_type == "article"] | order(publishedAt desc)[8...16] { ${content} }`
     ) as Promise<Article[]>;
 
     const fetchBulletin = client.fetch(

@@ -90,7 +90,7 @@
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>
 										<span>Dec 24</span><span>|</span>
-										<span class="flex items-center"><MessageSquare /> 3</span>
+										<span class="flex items-center space-x-1"><MessageSquare /> 3</span>
 									</p>
 								</div>
 							</li>
@@ -106,7 +106,7 @@
 									<p class="flex items-center space-x-2 text-xs">
 										<a href="/" class="font-bold text-primary hover:text-foreground">Super user</a>
 										<span>Dec 24</span><span>|</span>
-										<span class="flex items-center"><MessageSquare /> 3</span>
+										<span class="flex items-center space-x-1"><MessageSquare /> 3</span>
 									</p>
 								</div>
 							</li>

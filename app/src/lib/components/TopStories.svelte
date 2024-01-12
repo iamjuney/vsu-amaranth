@@ -3,7 +3,6 @@
 	import { formatDate } from '$lib/utils';
 	import { urlFor } from '$lib/utils/image';
 	import type { Article } from '$lib/utils/types';
-	import { MessageSquareIcon } from 'lucide-svelte';
 
 	let { articles } = $props<{ articles: Article[] }>();
 </script>
@@ -35,9 +34,9 @@
 						data-sveltekit-preload-data>{article.title}</a
 					>
 				</h2>
-				<h6 class="line-clamp-2 font-arial text-sm">
+				<h4 class="line-clamp-2 font-arial text-sm">
 					{article.description}
-				</h6>
+				</h4>
 				<div class="leading-140 tracking-15 relative z-10 inline-block text-xs uppercase">
 					{#each article.authors as author, index}
 						<div class="inline-block">
@@ -108,9 +107,9 @@
 									data-sveltekit-preload-data>{articles[0].title}</a
 								>
 							</h2>
-							<h6 class="line-clamp-3 font-arial">
+							<h4 class="line-clamp-3 font-arial">
 								{articles[0].description}
-							</h6>
+							</h4>
 							<p class="flex items-center justify-center space-x-2 text-base uppercase italic">
 								{#each articles[0].authors as author, index}
 									{#if index > 0}
@@ -147,9 +146,9 @@
 									data-sveltekit-preload-data>{articles[1].title}</a
 								>
 							</h2>
-							<h6 class="line-clamp-2 font-arial text-sm">
+							<h4 class="line-clamp-2 font-arial text-sm">
 								{articles[1].description}
-							</h6>
+							</h4>
 							<div class="leading-140 tracking-15 relative z-10 inline-block text-xs uppercase">
 								{#each articles[1].authors as author, index}
 									<div class="inline-block">
@@ -169,7 +168,7 @@
 									<span
 										><span class="mx-1">|</span>
 										<a class="group" href="/">
-											<MessageSquareIcon class="inline" size="12" />
+											<MessageSquare />
 											<span class=" group-hover:underline">26</span></a
 										></span
 									>
@@ -219,9 +218,9 @@
 							data-sveltekit-preload-data>{articles[0].title}</a
 						>
 					</h2>
-					<h6 class="line-clamp-3 font-arial">
+					<h4 class="line-clamp-3 font-arial">
 						{articles[0].description}
-					</h6>
+					</h4>
 					<p class="flex items-center justify-start space-x-2 text-base uppercase italic">
 						{#each articles[0].authors as author, index}
 							{#if index > 0}
@@ -294,9 +293,9 @@
 										data-sveltekit-preload-data>{article.title}</a
 									>
 								</h2>
-								<h6 class="line-clamp-2 font-arial text-xs">
+								<h4 class="line-clamp-2 font-arial text-xs">
 									{article.description}
-								</h6>
+								</h4>
 								<div>
 									<a
 										class="text-sm font-medium text-primary hover:text-darker-primary"
