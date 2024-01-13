@@ -71,7 +71,7 @@
 		</div>
 	</div>
 
-	<div class="containermt-4">
+	<div class="container mt-4">
 		<nav aria-label="Main navigation">
 			<ul
 				class="no-scrollbar flex w-full snap-x snap-mandatory items-center space-x-8 overflow-x-scroll border-b md:justify-center"
