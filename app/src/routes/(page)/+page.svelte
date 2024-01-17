@@ -19,9 +19,9 @@
 <div class="container">
 	<div class="flex flex-col md:flex-row md:gap-16">
 		<div class="grow">
-			<div class="mt-6 flex flex-col items-center justify-center">
+			<div class="mt-6">
 				<div class="h-1 w-10 bg-primary/50"></div>
-				<h1 class="mt-2 inline-block text-lg font-medium md:text-2xl">Latest Stories</h1>
+				<h1 class="mt-2 inline-block text-2xl font-medium">Latest Stories</h1>
 			</div>
 
 			<div class="mt-2 divide-y divide-muted md:mt-6">

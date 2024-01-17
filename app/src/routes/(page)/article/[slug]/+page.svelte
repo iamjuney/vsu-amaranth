@@ -37,7 +37,7 @@
 				{article.description}
 			</p>
 		</div>
-		<div class="flex items-center space-x-2 text-sm text-foreground">
+		<div class="flex items-center space-x-2 text-xs text-foreground md:text-sm">
 			<span>By</span>
 			{#each article.authors as author, index}
 				{#if index > 0}
