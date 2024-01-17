@@ -7,10 +7,10 @@
 	let { article } = $props<{ article: Article }>();
 </script>
 
-<article class="flex w-full items-start py-4">
+<article class="flex w-full flex-col items-start py-4 md:flex-row">
 	<a
 		href="/article/{article.slug}"
-		class="relative block aspect-video w-full basis-1/3 items-center overflow-hidden"
+		class="relative mb-4 block aspect-video w-full items-center overflow-hidden md:basis-1/3"
 		data-sveltekit-preload-data
 	>
 		<img
@@ -20,7 +20,7 @@
 			style="transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);"
 		/>
 	</a>
-	<div class="w-full grow basis-2/3 pl-4">
+	<div class="w-full grow md:basis-2/3 md:pl-4">
 		<div class="space-y-1 md:space-y-2">
 			<div class="flex items-center">
 				<div class="leading-140 tracking-15 relative z-10 inline-block text-xs uppercase">
@@ -39,8 +39,8 @@
 							<a class="group" href="/">
 								<MessageSquare />
 								<span class="decoration-primary group-hover:underline">26</span></a
-							></span
-						>
+							>
+						</span>
 					</div>
 				</div>
 			</div>

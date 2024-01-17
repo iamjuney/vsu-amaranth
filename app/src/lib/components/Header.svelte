@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { Button } from '$lib/components/ui/button';
+	import { Button, Input, DropdownMenu } from '$lib/components/ui/';
 	import type { HeaderLink } from '$lib/utils/types';
-	import { MenuIcon, SearchIcon } from 'lucide-svelte';
+	import { SearchIcon } from 'lucide-svelte';
 	import { toggleMode } from 'mode-watcher';
 	import { Moon, Sun } from 'radix-icons-svelte';
-	import Input from './ui/input/input.svelte';
 
 	let { header_links } = $props<{ header_links: HeaderLink[] }>();
 	let pathname = $derived($page.url.pathname);
@@ -62,11 +61,20 @@
 			>
 			<div class="flex space-x-2">
 				<div class="relative flex items-center">
-					<form action="">
+					<form action="" class="w-40">
 						<Input type="text" name="search" placeholder="Search" />
 					</form>
 					<SearchIcon class="absolute right-2 top-2 text-gray-500" size="24" />
 				</div>
+				<Button on:click={toggleMode} variant="outline" size="icon">
+					<Sun
+						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+					/>
+					<Moon
+						class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+					/>
+					<span class="sr-only">Toggle theme</span>
+				</Button>
 			</div>
 		</div>
 	</div>
@@ -99,20 +107,20 @@
 	</div>
 </header>
 
-<div class="fixed bottom-2 z-50 w-full md:hidden">
+<!-- <div class="fixed bottom-2 z-50 w-full md:hidden">
 	<div class="container mx-auto">
 		<div class="relative flex justify-center">
 			<div
-				class="relative flex max-w-fit flex-col border-8 border-primary/60 bg-darker-primary px-5 py-4"
+				class="relative flex max-w-fit flex-col border-8 border-primary/60 bg-darker-primary px-4 py-3"
 			>
 				<div class="relative flex items-center justify-center space-x-2">
-					<div class="font-medium text-darker-primary-foreground">home</div>
+					<div class="font-medium text-darker-primary-foreground">menu</div>
 					<MenuIcon class="text-darker-primary-foreground" size="24" />
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <style>
 	li[aria-current='page']::before {

@@ -3,102 +3,107 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --background: 40 25% 95%;
-        --foreground: 234 18% 23%;
-        --card: 260 2% 67%;
-        --card-foreground: 234 18% 23%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 234 18% 23%;
-        --primary: 122 96% 32%;
-        --primary-foreground: 355.7 100% 97.3%;
-        --darker-primary: 122 96% 27%;
-        --darker-primary-foreground: 0 0% 95%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 260 2% 67%;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-        --destructive: 0 72.22% 50.59%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 122 96% 32%;
-        --radius: 0rem;
-    }
-    .dark {
-        --background: 140 35% 10%;
-        --foreground: 0 0% 95%;
-        --card: 120 69% 14%;
-        --card-foreground: 0 0% 95%;
-        --popover: 0 0% 9%;
-        --popover-foreground: 0 0% 95%;
-        --primary: 142.1 70.6% 45.3%;
-        --primary-foreground: 144.9 80.4% 10%;
-        --darker-primary: 142.1 70.6% 40.3%;
-        --darker-primary-foreground: 234 18% 23%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 15%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 12 6.5% 15.1%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 85.7% 97.3%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 142.4 71.8% 29.2%;
-    }
+	:root {
+		--background: 40 25% 95%;
+		--foreground: 234 18% 23%;
+		--card: 260 2% 67%;
+		--card-foreground: 234 18% 23%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 234 18% 23%;
+		--primary: 122 96% 32%;
+		--primary-foreground: 355.7 100% 97.3%;
+		--darker-primary: 122 96% 27%;
+		--darker-primary-foreground: 0 0% 95%;
+		--secondary: 240 4.8% 95.9%;
+		--secondary-foreground: 240 5.9% 10%;
+		--muted: 260 2% 67%;
+		--muted-foreground: 240 3.8% 46.1%;
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
+		--destructive: 0 72.22% 50.59%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 240 5.9% 90%;
+		--input: 240 5.9% 90%;
+		--ring: 122 96% 32%;
+		--radius: 0rem;
+	}
+	.dark {
+		--background: 140 35% 10%;
+		--foreground: 0 0% 95%;
+		--card: 120 69% 14%;
+		--card-foreground: 0 0% 95%;
+		--popover: 0 0% 9%;
+		--popover-foreground: 0 0% 95%;
+		--primary: 142.1 70.6% 45.3%;
+		--primary-foreground: 144.9 80.4% 10%;
+		--darker-primary: 142.1 70.6% 40.3%;
+		--darker-primary-foreground: 234 18% 23%;
+		--secondary: 240 3.7% 15.9%;
+		--secondary-foreground: 0 0% 98%;
+		--muted: 255 2% 33%;
+		--muted-foreground: 240 5% 64.9%;
+		--accent: 12 6.5% 15.1%;
+		--accent-foreground: 0 0% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 85.7% 97.3%;
+		--border: 240 3.7% 15.9%;
+		--input: 240 3.7% 15.9%;
+		--ring: 142.4 71.8% 29.2%;
+	}
 }
- 
+
 @layer base {
-    @font-face {
-        font-family: 'Helvetica Neue';
-        src: url('/fonts/HelveticaNeue-Thin.woff2') format('woff2'),
-            url('/fonts/HelveticaNeue-Thin.woff') format('woff');
-        font-weight: 100;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'Helvetica Neue';
+		src:
+			url('/fonts/HelveticaNeue-Thin.woff2') format('woff2'),
+			url('/fonts/HelveticaNeue-Thin.woff') format('woff');
+		font-weight: 100;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @font-face {
-        font-family: 'Helvetica Neue';
-        src: url('/fonts/HelveticaNeue-Light.woff2') format('woff2'),
-            url('/fonts/HelveticaNeue-Light.woff') format('woff');
-        font-weight: 300;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'Helvetica Neue';
+		src:
+			url('/fonts/HelveticaNeue-Light.woff2') format('woff2'),
+			url('/fonts/HelveticaNeue-Light.woff') format('woff');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @font-face {
-        font-family: 'Helvetica Neue';
-        src: url('/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-            url('/fonts/HelveticaNeue-Medium.woff') format('woff');
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'Helvetica Neue';
+		src:
+			url('/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+			url('/fonts/HelveticaNeue-Medium.woff') format('woff');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @font-face {
-        font-family: 'Helvetica Neue';
-        src: url('/fonts/HelveticaNeue.woff2') format('woff2'),
-            url('/fonts/HelveticaNeue.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'Helvetica Neue';
+		src:
+			url('/fonts/HelveticaNeue.woff2') format('woff2'),
+			url('/fonts/HelveticaNeue.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @font-face {
-        font-family: 'Helvetica Neue';
-        src: url('/fonts/HelveticaNeue-Bold.woff2') format('woff2'),
-            url('/fonts/HelveticaNeue-Bold.woff') format('woff');
-        font-weight: bold;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'Helvetica Neue';
+		src:
+			url('/fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+			url('/fonts/HelveticaNeue-Bold.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @keyframes fade-in {
+	@keyframes fade-in {
 		from {
 			opacity: 0;
 		}
@@ -122,37 +127,39 @@
 		}
 	}
 
-    :root::view-transition-old(root) {
-        animation:
-            90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
-    }
+	:root::view-transition-old(root) {
+		animation:
+			90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+	}
 
-    :root::view-transition-new(root) {
-        animation:
-            210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
-    }
+	:root::view-transition-new(root) {
+		animation:
+			210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+	}
 
-    * {
-        @apply border-border;
-    }
+	* {
+		@apply border-border;
+	}
 
-    body {
-        @apply bg-background text-foreground;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-feature-settings: "rlig" 1, "calt" 1;
-    }
+	body {
+		@apply bg-background text-foreground;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-feature-settings:
+			'rlig' 1,
+			'calt' 1;
+	}
 }
 
 @layer utilities {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }   
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 }
