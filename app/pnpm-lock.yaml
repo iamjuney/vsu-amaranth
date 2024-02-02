@@ -24,8 +24,8 @@ dependencies:
     specifier: ^3.27.1
     version: 3.27.1
   lucide-svelte:
-    specifier: ^0.300.0
-    version: 0.300.0(svelte@5.0.0-next.34)
+    specifier: ^0.321.0
+    version: 0.321.0(svelte@5.0.0-next.34)
   mode-watcher:
     specifier: ^0.1.2
     version: 0.1.2(svelte@5.0.0-next.34)
@@ -2052,10 +2052,10 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-svelte@0.300.0(svelte@5.0.0-next.34):
-    resolution: {integrity: sha512-oRWQR+ESh1zedKipUir8aXxbPeThrJ32OYJzcVpTMA2fj9mZUhG9Gn9MDFSLapKpzBF63XvA91eaxqeAhQ0icQ==}
+  /lucide-svelte@0.321.0(svelte@5.0.0-next.34):
+    resolution: {integrity: sha512-sp5ogKKo8Oth6mcsIwN1HGudeshzSjtTGVwtISD/GdEjBaG4z3fwF6JupnnLEVPXC+TCETwcn6y3Y/Z3ljbs/Q==}
     peerDependencies:
-      svelte: '>=3 <5'
+      svelte: ^3 || ^4 || ^5.0.0-next.42
     dependencies:
       svelte: 5.0.0-next.34
     dev: false
